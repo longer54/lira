@@ -1,0 +1,1259 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050404">
+<title>Lira</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iemwiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmZmMWI4Ii8+PHN0b3Agb2Zmc2V0PSIuMyIgc3RvcC1jb2xvcj0iI2U5YzQ2YSIvPgogICAgICA8c3RvcCBvZmZzZXQ9Ii41NSIgc3RvcC1jb2xvcj0iI2E4N2EyYSIvPjxzdG9wIG9mZnNldD0iLjgiIHN0b3AtY29sb3I9IiNlNGJkNjIiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmJlNmEyIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJ0bG8iIGN4PSIuNSIgY3k9Ii4zIiByPSIuODUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMxZjE3MDkiLz48c3RvcCBvZmZzZXQ9Ii42IiBzdG9wLWNvbG9yPSIjMGEwODA1Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDIwMjAyIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogICAgPHJhZGlhbEdyYWRpZW50IGlkPSJibGFzayIgY3g9Ii41IiBjeT0iLjUiIHI9Ii41Ij4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZjNkMjdhIiBzdG9wLW9wYWNpdHk9Ii4yMiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2YzZDI3YSIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8L3JhZGlhbEdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iMjU2IiBoZWlnaHQ9IjI1NiIgcng9IjU2IiBmaWxsPSJ1cmwoI3RsbykiLz4KICA8Y2lyY2xlIGN4PSIxMjgiIGN5PSIxMjYiIHI9IjEwNCIgZmlsbD0idXJsKCNibGFzaykiLz4KICA8cmVjdCB4PSI5IiB5PSI5IiB3aWR0aD0iMjM4IiBoZWlnaHQ9IjIzOCIgcng9IjQ4IiBmaWxsPSJub25lIiBzdHJva2U9InVybCgjemwpIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8cmVjdCB4PSIxNiIgeT0iMTYiIHdpZHRoPSIyMjQiIGhlaWdodD0iMjI0IiByeD0iNDIiIGZpbGw9Im5vbmUiIHN0cm9rZT0idXJsKCN6bCkiIHN0cm9rZS13aWR0aD0iMS4yIiBvcGFjaXR5PSIuNTUiLz4KICA8ZyBzdHJva2U9InVybCgjemwpIiBzdHJva2Utd2lkdGg9IjciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgNikiPgogIDxnIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICA8cGF0aCBkPSJNMTEzIDE5MCBDNzAgMTcyIDUwIDEyMiA2NCA4MCBDNzAgNjIgNzIgNDggNjAgNDQgQzQ4IDQwIDQyIDU0IDUyIDYwIEM1NiA2MiA2MCA2MCA2MCA1NiIvPgogICAgPHBhdGggZD0iTTE0MyAxOTAgQzE4NiAxNzIgMjA2IDEyMiAxOTIgODAgQzE4NiA2MiAxODQgNDggMTk2IDQ0IEMyMDggNDAgMjE0IDU0IDIwNCA2MCBDMjAwIDYyIDE5NiA2MCAxOTYgNTYiLz4KICAgIDxwYXRoIGQ9Ik0xMTggMTgyIEM4NCAxNjYgNzAgMTI0IDgwIDg2IiBzdHJva2Utd2lkdGg9IjUiLz4KICAgIDxwYXRoIGQ9Ik0xMzggMTgyIEMxNzIgMTY2IDE4NiAxMjQgMTc2IDg2IiBzdHJva2Utd2lkdGg9IjUiLz4KICAgIDxwYXRoIGQ9Ik02NiA3NCBIMTkwIi8+CiAgICA8cGF0aCBkPSJNMTA0IDc0IFYxNzIgTTExNiA3NCBWMTgwIE0xMjggNzQgVjE4NCBNMTQwIDc0IFYxODAgTTE1MiA3NCBWMTcyIiBzdHJva2Utd2lkdGg9IjQuNSIvPgogICAgPHBhdGggZD0iTTExMyAxOTAgQzEyMiAxOTQgMTM0IDE5NCAxNDMgMTkwIi8+CiAgICA8cGF0aCBkPSJNMTE2IDE5NCBMMTA4IDIxMiBIMTQ4IEwxNDAgMTk0Ii8+CiAgPC9nPgogIDwvZz4KPC9zdmc+Cg==">
+<style>
+:root {
+  --tlo: #050404; --panel: #0b0907; --panel2: #17120b; --linia: #33280f;
+  --tekst: #f2e9d4; --szary: #a3957a; --zloto: #d9b05a; --zloto2: #f5d67e;
+  --granat: #221a0b; --czerw: #e06c6c;   /* granat: dawna nazwa, teraz ciemne złoto (podświetlenia) */
+  --zl: linear-gradient(135deg, #fff1b8 0%, #f0cf78 22%, #c8993f 45%, #8e6522 60%, #d4a94f 78%, #fbe6a2 100%);
+  --zlPolysk: linear-gradient(100deg, #b8862e 0%, #f5d67e 20%, #fff4c4 25%, #d9b05a 35%, #8a6420 50%, #d9b05a 65%, #f5d67e 80%, #b8862e 100%);
+  --zlLinia: linear-gradient(90deg, transparent, #8a6420 15%, #f5d67e 50%, #8a6420 85%, transparent);
+  --szeryf: "Cinzel", "Cormorant Garamond", Georgia, serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--tlo); color: var(--tekst);
+  font: 14px/1.4 "Inter", "Noto Sans", system-ui, sans-serif; overflow: hidden; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+img { display: block; }
+.aplikacja { display: grid; height: 100vh; grid-template-rows: 56px 1fr 84px;
+  grid-template-columns: 1fr 320px; grid-template-areas: "gora gora" "srodek kolejka" "gracz gracz"; }
+@media (max-width: 900px) { .aplikacja { grid-template-columns: 1fr; grid-template-areas: "gora" "srodek" "gracz"; }
+  .kolejka { display: none; } }
+
+/* góra */
+.gora { grid-area: gora; display: flex; align-items: center; gap: 12px; padding: 0 18px;
+  border-bottom: 1px solid var(--linia); background: var(--panel); }
+.logo { font-weight: 700; letter-spacing: .5px; color: var(--zloto); display: flex; gap: 8px; align-items: center;
+  cursor: pointer; white-space: nowrap; }
+.logo svg { width: 22px; height: 22px; }
+.wstecz { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: var(--szary); }
+.wstecz:hover { background: var(--panel2); color: var(--tekst); }
+.wstecz[hidden] { display: none; }
+.szukaj { flex: 1; max-width: 560px; position: relative; }
+.szukaj input { width: 100%; height: 38px; border-radius: 19px; border: 1px solid var(--linia);
+  background: var(--tlo); color: var(--tekst); padding: 0 16px 0 40px; font: inherit; outline: none; }
+.szukaj input:focus { border-color: var(--zloto); }
+.szukaj svg { position: absolute; left: 13px; top: 10px; width: 18px; height: 18px; color: var(--szary); }
+
+/* środek */
+.srodek { grid-area: srodek; overflow-y: auto; padding: 22px 26px 40px; }
+h2 { font-size: 19px; margin: 26px 0 12px; }
+h2:first-child { margin-top: 0; }
+.rzad { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; }
+.kafel { flex: 0 0 160px; width: 160px; min-width: 0; cursor: pointer; }
+.kafel .ok { width: 160px; height: 160px; border-radius: 8px; background: var(--panel2); object-fit: cover; position: relative; }
+.kafel.wykonawca .ok, .kafel.kanal .ok { border-radius: 50%; }
+.kafel.stacja .ok { object-fit: contain; padding: 18px; }
+.kafel { position: relative; }
+.u .plus.dp { color: var(--zloto2); opacity: 1; }
+.utwory .u.od { grid-template-columns: 28px 44px 1fr auto auto auto; }
+.kafel .gw { position: absolute; top: 6px; right: 6px; width: 30px; height: 30px; border-radius: 50%;
+  background: #000a; color: var(--szary); font-size: 16px; display: none; place-items: center; }
+.kafel:hover .gw, .kafel .gw.tak { display: grid; }
+.kafel .gw.tak { color: var(--zloto2); }
+.kafel .gw:hover { color: var(--zloto2); background: #000d; }
+h2 .xzak { color: var(--szary); font-size: 13px; font-weight: 400; margin-left: 10px; }
+h2 .xzak:hover { color: var(--czerw); }
+.menuZak { position: fixed; background: var(--panel2); border: 1px solid var(--linia); border-radius: 10px; padding: 6px;
+  min-width: 250px; box-shadow: 0 10px 30px #0008; z-index: 8; }
+.menuZak button { display: block; width: 100%; text-align: left; padding: 9px 12px; border-radius: 6px; }
+.menuZak button:hover { background: var(--granat); }
+.menuZak .opis { color: var(--szary); font-size: 12px; padding: 6px 12px; }
+.menuZak input { width: 100%; box-sizing: border-box; margin: 4px 0; padding: 8px 10px; border-radius: 6px;
+  border: 1px solid var(--linia); background: var(--tlo); color: var(--tekst); }
+.kafel .t { margin-top: 8px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kafel .p { color: var(--szary); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kafel:hover .ok { outline: 2px solid var(--zloto); }
+
+.utwory { display: flex; flex-direction: column; }
+.u { display: grid; grid-template-columns: 28px 44px 1fr auto auto; gap: 12px; align-items: center;
+  padding: 6px 10px; border-radius: 8px; cursor: pointer; }
+.u:hover { background: var(--panel2); }
+.u .nr { color: var(--szary); text-align: right; font-size: 12.5px; }
+.u img, .u .brak { width: 44px; height: 44px; border-radius: 5px; object-fit: cover; background: var(--panel2); }
+.u .t { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.u .p { color: var(--szary); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.u .czas { color: var(--szary); font-size: 12.5px; }
+.u .plus { opacity: 0; color: var(--szary); width: 30px; height: 30px; border-radius: 50%; }
+.u:hover .plus { opacity: 1; }
+.u .plus:hover { color: var(--zloto); background: var(--tlo); }
+.u.gra .t { color: var(--zloto); }
+
+.naglowek { display: flex; gap: 24px; align-items: flex-end; margin-bottom: 22px; }
+.naglowek img { width: 200px; height: 200px; border-radius: 10px; object-fit: cover; background: var(--panel2); }
+.naglowek.wykonawca img, .naglowek.kanal img { border-radius: 50%; }
+.naglowek h1 { margin: 0 0 6px; font-size: 30px; }
+.naglowek .p { color: var(--szary); margin-bottom: 16px; }
+.przycisk { background: var(--zloto); color: #1a1406; font-weight: 700; padding: 10px 22px; border-radius: 22px; }
+.przycisk:hover { background: var(--zloto2); }
+.przycisk.drugi { background: var(--panel2); color: var(--tekst); font-weight: 600; margin-left: 8px; }
+.najlepszy { display: flex; gap: 18px; align-items: center; background: var(--panel); border: 1px solid var(--linia);
+  border-radius: 12px; padding: 16px; max-width: 520px; cursor: pointer; }
+.najlepszy img { width: 96px; height: 96px; border-radius: 8px; object-fit: cover; }
+.najlepszy.wykonawca img { border-radius: 50%; }
+.najlepszy .t { font-size: 20px; font-weight: 700; }
+.najlepszy .p { color: var(--szary); }
+.info { color: var(--szary); padding: 40px 0; text-align: center; }
+.kreci { width: 28px; height: 28px; border: 3px solid var(--linia); border-top-color: var(--zloto); border-radius: 50%;
+  animation: obrot 0.8s linear infinite; margin: 60px auto; }
+@keyframes obrot { to { transform: rotate(360deg); } }
+
+/* kolejka */
+.kolejka { grid-area: kolejka; border-left: 1px solid var(--linia); background: var(--panel); display: flex;
+  flex-direction: column; min-height: 0; }
+.kolejka h3 { margin: 0; padding: 16px 18px 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--szary); }
+.kolejka .utwory { overflow-y: auto; padding: 0 8px 20px; }
+.kolejka .u { grid-template-columns: 40px 1fr auto; gap: 10px; padding: 5px 8px; }
+.kolejka .u img, .kolejka .u .brak { width: 40px; height: 40px; }
+.kolejka .u.biezacy { background: var(--granat); }
+.kolejka .u.biezacy .t { color: var(--zloto2); }
+.kolejka .u.bylo { opacity: .45; }
+
+/* gracz */
+.gracz { grid-area: gracz; display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 1.4fr) minmax(0, 1fr);
+  align-items: center; gap: 18px; padding: 0 18px; background: var(--panel); border-top: 1px solid var(--linia); }
+.teraz { display: flex; gap: 12px; align-items: center; min-width: 0; }
+.teraz img, .teraz .brak { width: 56px; height: 56px; border-radius: 6px; object-fit: cover; background: var(--panel2); flex: none; }
+.teraz .t { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.teraz .p { color: var(--szary); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gracz { position: relative; }
+.akcje { display: flex; gap: 2px; flex: none; }
+.akcje button { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; color: var(--szary); }
+.akcje button:hover { color: var(--tekst); background: var(--panel2); }
+.akcje button.tak { color: var(--zloto2); }
+.akcje svg { width: 20px; height: 20px; }
+.menu.lewe { left: 18px; right: auto; bottom: 88px; max-height: 60vh; overflow-y: auto; }
+.menu input { width: 100%; margin: 4px 0; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--linia);
+  background: var(--tlo); color: var(--tekst); font: inherit; outline: none; }
+.sterowanie { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.guziki { display: flex; gap: 14px; align-items: center; }
+.guziki button { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; color: var(--tekst); }
+.guziki button:hover { color: var(--zloto2); }
+.guziki .gg { width: 44px; height: 44px; background: var(--tekst); color: var(--tlo); }
+.guziki .gg:hover { background: var(--zloto2); color: var(--tlo); }
+.guziki svg { width: 22px; height: 22px; }
+.pasek { display: flex; align-items: center; gap: 10px; width: 100%; font-size: 12px; color: var(--szary); }
+.pasek .os { flex: 1; height: 5px; background: var(--linia); border-radius: 3px; cursor: pointer; position: relative; }
+.pasek .os div { height: 100%; background: var(--zloto); border-radius: 3px; width: 0; }
+.pasek .os:hover { height: 7px; }
+.prawo { display: flex; gap: 10px; justify-content: flex-end; align-items: center; position: relative; }
+.prawo input[type=range] { width: 110px; accent-color: var(--zloto); }
+.prawo .ikonka { color: var(--szary); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; }
+.prawo .ikonka:hover { color: var(--zloto2); background: var(--panel2); }
+.menu { position: absolute; bottom: 52px; right: 0; background: var(--panel2); border: 1px solid var(--linia);
+  border-radius: 10px; padding: 6px; min-width: 250px; box-shadow: 0 10px 30px #0008; z-index: 5; }
+.menu button { display: block; width: 100%; text-align: left; padding: 9px 12px; border-radius: 6px; }
+.menu button:hover { background: var(--granat); }
+.menu .opis { color: var(--szary); font-size: 12px; padding: 6px 12px; }
+.baner { display: flex; gap: 14px; align-items: center; background: var(--granat); border: 1px solid #2d4170;
+  border-radius: 12px; padding: 14px 18px; margin-bottom: 22px; }
+.baner div { flex: 1; }
+.baner b { color: var(--zloto2); }
+.zakladka { color: var(--szary); padding: 8px 12px; border-radius: 18px; white-space: nowrap; font-weight: 600; }
+.zakladka:hover, .zakladka.tak { color: var(--tekst); background: var(--panel2); }
+.opisPodcastu { color: var(--szary); max-width: 760px; margin: -8px 0 18px; font-size: 13px;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.konto { color: var(--szary); font-size: 12.5px; white-space: nowrap; }
+.konto button { color: var(--szary); text-decoration: underline; }
+.komunikat { position: fixed; left: 50%; bottom: 100px; transform: translateX(-50%); background: var(--granat);
+  border: 1px solid var(--zloto); color: var(--tekst); padding: 10px 18px; border-radius: 10px; z-index: 9;
+  box-shadow: 0 8px 24px #0009; transition: opacity .3s; }
+.komunikat.blad { border-color: var(--czerw); }
+.nowaWersja { position: fixed; left: 10px; right: 10px; top: 10px; z-index: 40; display: flex; gap: 12px; align-items: center;
+  background: var(--granat); border: 1px solid var(--zloto); border-radius: 12px; padding: 12px 14px; box-shadow: 0 10px 30px #000a; }
+.nowaWersja div { flex: 1; font-size: 13.5px; }
+.nowaWersja b { color: var(--zloto2); }
+.nowaWersja button { font-weight: 700; }
+.nowaWersja .tak { background: var(--zloto); color: #1a1406; padding: 8px 14px; border-radius: 18px; }
+/* „Graj na” */
+.naUrz { display: none; }
+.naUrz.inny { display: flex; }
+.gracz .naUrz { position: absolute; left: 50%; transform: translateX(-50%); top: -26px; background: var(--zloto);
+  color: #1a1406; font-size: 12px; font-weight: 700; padding: 3px 14px; border-radius: 12px 12px 0 0; gap: 6px; }
+#bprzerzuc.inny { color: var(--zloto2); }
+.urz { display: flex !important; gap: 12px; align-items: center; }
+.urz .ik { font-size: 22px; width: 30px; text-align: center; }
+.urz .n { font-weight: 600; }
+.urz .o { color: var(--szary); font-size: 12px; }
+.urz.tak .n, .urz.tak .o { color: var(--zloto2); }
+.urz.off { opacity: .45; }
+.urz.pod { padding-left: 28px; }
+.wiersz { display: flex; align-items: center; gap: 4px; }
+.wiersz > button.urz { flex: 1 1 auto; width: auto !important; min-width: 0; }
+.wiersz > button.urz > span:last-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menu .wiersz > button.razem, .arkusz .wiersz > button.razem, .wiersz > button.razem {
+  display: grid; place-items: center; flex: 0 0 24px; width: 24px !important; height: 24px; padding: 0 !important;
+  margin-right: 8px; border-radius: 50%; border: 1.5px solid var(--szary); background: transparent;
+  color: transparent; font-size: 13px; line-height: 1; font-weight: 800; cursor: pointer; transition: .15s; }
+.menu .wiersz > button.razem:hover, .wiersz > button.razem:hover { border-color: var(--zloto2); background: transparent; color: var(--zloto2); }
+.menu .wiersz > button.razem.on, .arkusz .wiersz > button.razem.on, .wiersz > button.razem.on {
+  background: var(--zloto); border-color: var(--zloto); color: #1a1406; }
+.urz.pod .ik { font-size: 16px; }
+.pobierz { color: var(--zloto2) !important; }
+
+/* telefon: mini-odtwarzacz, dolne menu, pełny ekran — jak Spotify */
+.mini, .dol, .pelny, .arkusz { display: none; }
+@media (max-width: 700px) {
+  html, body { font-size: 15px; }
+  .aplikacja { height: 100dvh; grid-template-rows: auto 1fr auto auto; grid-template-areas: "gora" "srodek" "mini" "dol"; }
+  .gracz, .kolejka, .gora .zakladka, .konto, .logo { display: none !important; }
+  .gora { padding: 10px 12px; gap: 8px; border: 0; background: var(--tlo); padding-top: max(10px, env(safe-area-inset-top)); }
+  .szukaj { max-width: none; }
+  .szukaj input { height: 42px; border-radius: 10px; background: var(--panel2); border-color: transparent; font-size: 15px; }
+  .srodek { padding: 8px 14px 24px; }
+  h2 { font-size: 20px; margin: 22px 0 10px; }
+  .kafel { flex: 0 0 136px; width: 136px; }
+  .kafel .ok { width: 136px; height: 136px; }
+  .kafel .gw { display: grid; }
+  .u { grid-template-columns: 48px 1fr auto auto !important; gap: 12px; padding: 7px 4px; }
+  .u .nr, .u .czas { display: none; }
+  .u img, .u .brak { width: 48px; height: 48px; }
+  .u .plus { opacity: .7; }
+  .naglowek { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .naglowek img { width: 170px; height: 170px; align-self: center; }
+  .naglowek h1 { font-size: 24px; }
+  .najlepszy { max-width: none; }
+  .komunikat { bottom: calc(140px + env(safe-area-inset-bottom)); max-width: 90vw; }
+  .menuZak { left: 12px !important; right: 12px; min-width: 0; }
+
+  .mini { grid-area: mini; display: block; margin: 0 8px 6px; border-radius: 10px; overflow: hidden; position: relative;
+    background: var(--mini, #2a2f3c); transition: background .6s; }
+  .mini[hidden] { display: none; }
+  .mini .w { display: flex; align-items: center; gap: 10px; padding: 8px; }
+  .mini img, .mini .brak { width: 42px; height: 42px; border-radius: 6px; object-fit: cover; background: var(--panel2); flex: none; }
+  .mini .tx { flex: 1; min-width: 0; }
+  .mini .t { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mini .p { color: #fffb; font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .mini .p.urz-na { color: var(--zloto2); font-weight: 600; }
+  .mini button { width: 42px; height: 42px; display: grid; place-items: center; flex: none; }
+  .mini svg { width: 26px; height: 26px; }
+  .mini .os { position: absolute; left: 8px; right: 8px; bottom: 0; height: 2px; background: #fff3; border-radius: 2px; }
+  .mini .os div { height: 100%; width: 0; background: #fff; border-radius: 2px; }
+
+  .dol { grid-area: dol; display: flex; background: linear-gradient(transparent, #000c 40%); padding: 4px 0 max(6px, env(safe-area-inset-bottom)); }
+  .dol button { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; color: var(--szary); font-size: 11px; padding: 4px 0; }
+  .dol button .i { font-size: 21px; line-height: 1.1; filter: grayscale(1) brightness(1.4); opacity: .75; }
+  .dol button.tak { color: var(--tekst); }
+  .dol button.tak .i { filter: none; opacity: 1; }
+
+  .pelny { display: block; position: fixed; inset: 0; z-index: 20; overflow: hidden; background: var(--tlo);
+    transition: transform .32s cubic-bezier(.2,.8,.2,1); }
+  .pelny[hidden] { display: block; transform: translateY(105%); pointer-events: none; }
+  .pelny .tlo { position: absolute; inset: -60px; background-size: cover; background-position: center;
+    filter: blur(50px) saturate(1.6) brightness(.55); transform: scale(1.2); transition: background-image .6s; }
+  .pelny .tlo2 { position: absolute; inset: 0; background: linear-gradient(#0000 0%, #0007 55%, #000d 100%); }
+  .pelny .w { position: relative; height: 100%; display: flex; flex-direction: column; padding: max(14px, env(safe-area-inset-top)) 24px max(18px, env(safe-area-inset-bottom)); }
+  .pelny .g { display: flex; align-items: center; justify-content: space-between; }
+  .pelny .g button { width: 40px; height: 40px; display: grid; place-items: center; }
+  .pelny .g svg { width: 28px; height: 28px; }
+  .pelny .skad { text-align: center; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; color: #fffc; }
+  .pelny .skad b { display: block; letter-spacing: 0; text-transform: none; font-size: 13px; color: #fff; margin-top: 2px; }
+  .pelny .okl { flex: 1; display: grid; place-items: center; min-height: 0; padding: 22px 0; touch-action: pan-y; }
+  .pelny .okl img, .pelny .okl .brak { width: min(100%, 46vh); aspect-ratio: 1; height: auto; border-radius: 10px; object-fit: cover;
+    box-shadow: 0 24px 60px #000a; background: var(--panel2); transition: transform .25s, opacity .25s; }
+  .pelny .okl.gra img { animation: oddech 6s ease-in-out infinite; }
+  @keyframes oddech { 50% { transform: scale(1.015); } }
+  .pelny .info { display: flex; align-items: center; gap: 12px; }
+  .pelny .info .tx { flex: 1; min-width: 0; }
+  .pelny .info .t { font-size: 23px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pelny .info .p { color: #fffb; font-size: 15.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .pelny .info button { width: 44px; height: 44px; display: grid; place-items: center; color: #fffd; font-size: 22px; }
+  .pelny .info button.tak { color: var(--zloto2); }
+  .pelny .info svg { width: 28px; height: 28px; }
+  .pelny input[type=range] { width: 100%; margin: 18px 0 2px; accent-color: #fff; height: 22px; }
+  .pelny .czasy { display: flex; justify-content: space-between; font-size: 12px; color: #fffa; }
+  .pelny .ster { display: flex; align-items: center; justify-content: space-between; margin: 12px 0 8px; }
+  .pelny .ster button { width: 52px; height: 52px; display: grid; place-items: center; color: #fff; }
+  .pelny .ster svg { width: 36px; height: 36px; }
+  .pelny .ster .gg { width: 72px; height: 72px; border-radius: 50%; background: #fff; color: #000; }
+  .pelny .ster .gg svg { width: 38px; height: 38px; }
+  .pelny .ster .boczny { color: #fffb; font-size: 21px; }
+  .pelny .ster .boczny svg { width: 26px; height: 26px; }
+  .pelny .ster .boczny.tak { color: var(--zloto2); }
+  .pelny .glo { display: flex; align-items: center; gap: 10px; margin: 0 0 10px; color: #fffb; }
+  .pelny .glo svg { width: 22px; height: 22px; flex: none; }
+  .pelny .glo input[type=range] { margin: 0; flex: 1; }
+  .pelny .info .p, .gracz .teraz .p { cursor: pointer; }
+  .pelny .d { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .pelny .d button { color: #fffc; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; padding: 8px 4px; }
+  .pelny .d button.inny { color: var(--zloto2); }
+  .pelny .d svg { width: 22px; height: 22px; }
+
+  .arkusz { display: block; position: fixed; inset: 0; z-index: 30; background: #0008; transition: opacity .25s; }
+  .arkusz[hidden] { display: block; opacity: 0; pointer-events: none; }
+  .arkusz .a { position: absolute; left: 0; right: 0; bottom: 0; max-height: 78dvh; overflow-y: auto; background: #1e2330;
+    border-radius: 16px 16px 0 0; padding: 8px 12px max(16px, env(safe-area-inset-bottom)); transition: transform .28s cubic-bezier(.2,.8,.2,1); }
+  .arkusz[hidden] .a { transform: translateY(100%); }
+  .arkusz .uchwyt { width: 38px; height: 4px; border-radius: 2px; background: #fff4; margin: 4px auto 12px; }
+  .arkusz h3 { margin: 4px 8px 12px; font-size: 18px; }
+  .arkusz button.urz { width: 100%; padding: 12px 8px; border-radius: 10px; text-align: left; }
+  .arkusz button.urz:active { background: #fff1; }
+  .arkusz .opis { color: var(--szary); font-size: 12.5px; padding: 8px; }
+  .arkusz .u.biezacy .t { color: var(--zloto2); }
+  .arkusz .u.bylo { opacity: .45; }
+  .arkusz .u { grid-template-columns: 48px 1fr auto !important; }
+}
+
+/* ── Odkrywaj: losowa muzyka przewijana jak TikTok / Samples w YT Music ── */
+.srodek.wOdk { padding: 0; overflow: hidden; }
+.odk { height: 100%; overflow-y: auto; scroll-snap-type: y mandatory; overscroll-behavior: contain; scrollbar-width: none; }
+.odk::-webkit-scrollbar { display: none; }
+.odk .karta { height: 100%; scroll-snap-align: start; scroll-snap-stop: always; position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 20px 24px; box-sizing: border-box; }
+.odk .karta .tlo { position: absolute; inset: -40px; background-size: cover; background-position: center;
+  filter: blur(40px) saturate(1.2) sepia(.35) brightness(.35); z-index: 0; }
+.odk .karta > *:not(.tlo) { position: relative; z-index: 1; }
+.odk .karta img.ok, .odk .karta .brak { width: min(78vw, 46vh, 420px); aspect-ratio: 1; height: auto; object-fit: cover;
+  border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px; box-shadow: 0 0 0 1px rgba(243,210,122,.35), 0 18px 50px #000c; }
+.odk .karta.gra img.ok { animation: oddech 6s ease-in-out infinite; }
+.odk .tx { text-align: center; max-width: 92%; }
+.odk .tx .t { font-family: var(--szeryf, serif); font-size: 24px; font-weight: 700; color: #f7e3ae; text-shadow: 0 0 20px rgba(243,210,122,.25); }
+.odk .tx .p { color: #cdbd98; font-size: 16px; margin-top: 4px; cursor: pointer; }
+.odk .tx .p:hover { text-decoration: underline; }
+.odk .guz { display: flex; gap: 14px; }
+.odk .guz button { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; font-size: 22px;
+  background: #0008; border: 1px solid rgba(243,210,122,.35); color: #f0dca8; }
+.odk .guz button.tak { color: var(--zloto2, #f3d27a); background: rgba(243,210,122,.18); }
+.odk .podp { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-size: 12px; color: #a3957a; letter-spacing: .08em; }
+
+/* ── Lira: czerń i złoto (2026-09-30, „ma wyglądać bogato, jak w kościele”) ─────────── */
+@font-face { font-family: "Cinzel"; font-weight: 400 900; font-display: swap; src: url(/czcionka/cinzel.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Cinzel"; font-weight: 400 900; font-display: swap; src: url(/czcionka/cinzel-ext.woff2) format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+::selection { background: #d9b05a55; color: #fff; }
+* { scrollbar-color: #5a4518 transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: linear-gradient(#7a5a1e, #3a2a0c); border-radius: 6px; border: 2px solid transparent; background-clip: padding-box; }
+.aplikacja { background:
+  radial-gradient(ellipse 75% 50% at 50% -10%, rgba(243,210,122,.14), transparent 70%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23d9b05a' stroke-opacity='.07'%3E%3Cpath d='M36 0 72 36 36 72 0 36Z'/%3E%3Ccircle cx='36' cy='36' r='5'/%3E%3Cpath d='M36 24c5 4 5 20 0 24-5-4-5-20 0-24ZM24 36c4-5 20-5 24 0-4 5-20 5-24 0Z'/%3E%3Cpath d='M0 0h6M66 0h6M0 72h6M66 72h6' stroke-opacity='.05'/%3E%3C/g%3E%3C/svg%3E"),
+  var(--tlo); }
+.gora::after, .gracz::before { content: ""; position: absolute; left: 0; right: 0; height: 1px; background: var(--zlLinia); pointer-events: none; }
+
+/* góra */
+.gora { position: relative; background: linear-gradient(180deg, #110d07, #070605); border-bottom: 0; }
+.gora::after { bottom: 0; }
+.logo { font-family: var(--szeryf); font-weight: 700; font-size: 21px; letter-spacing: .24em; gap: 10px; }
+.logo span { background: var(--zlPolysk); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text;
+  color: transparent; animation: polysk 9s linear infinite; filter: drop-shadow(0 0 10px rgba(243,210,122,.25)); }
+.logo svg { width: 28px; height: 28px; filter: drop-shadow(0 0 6px rgba(243,210,122,.35)); }
+@keyframes polysk { to { background-position: -200% 0; } }
+.wstecz { color: var(--zloto); }
+.wstecz:hover { background: rgba(217,176,90,.12); color: var(--zloto2); }
+.szukaj input { background: #0a0806; border: 1px solid #3a2c10; box-shadow: inset 0 1px 8px #000c; transition: border-color .2s, box-shadow .2s; }
+.szukaj input:focus { border-color: var(--zloto); box-shadow: inset 0 1px 8px #000c, 0 0 0 3px rgba(217,176,90,.14), 0 0 22px rgba(243,210,122,.12); }
+.szukaj input::placeholder { color: #7d6f52; }
+.szukaj svg { color: var(--zloto); opacity: .8; }
+.zakladka { color: #b9a67c; font-family: var(--szeryf); font-weight: 700; font-size: 13px; letter-spacing: .07em; transition: color .2s, background .2s; }
+.zakladka .i { filter: sepia(1) saturate(2.4) hue-rotate(-14deg) brightness(1.02); }
+.zakladka:hover { color: var(--zloto2); background: rgba(217,176,90,.08); }
+.zakladka.tak { color: var(--zloto2); background: linear-gradient(180deg, rgba(243,210,122,.16), rgba(217,176,90,.05));
+  box-shadow: inset 0 0 0 1px #6b4d17, 0 0 16px rgba(243,210,122,.1); }
+.konto, .konto button { color: #8f805f; }
+.oknoGuziki { display: none; gap: 2px; margin-left: 2px; }
+.wOknie .oknoGuziki { display: flex; }
+.oknoGuziki button { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; color: #a8946a; transition: color .15s, background .15s; }
+.oknoGuziki button:hover { color: var(--zloto2); background: rgba(217,176,90,.14); }
+.oknoGuziki button.x:hover { color: #fff; background: #7a1c1c; }
+.oknoGuziki svg { width: 14px; height: 14px; }
+.wOknie .gora { user-select: none; -webkit-user-select: none; }
+
+/* środek */
+h2 { font-family: var(--szeryf); font-weight: 700; font-size: 18px; letter-spacing: .08em; color: #efcd76;
+  text-shadow: 0 0 18px rgba(243,210,122,.22); display: flex; align-items: center; gap: 10px; }
+h2::before { content: "✦"; font-size: 11px; color: var(--zloto); }
+h2::after { content: ""; flex: 1; min-width: 24px; height: 1px; background: linear-gradient(90deg, #7a5a1e, transparent 80%); }
+h2 .xzak { font-family: "Inter", "Noto Sans", system-ui, sans-serif; letter-spacing: 0; text-shadow: none; margin-left: 0; }
+.kafel .ok { border-radius: 50% 50% 8px 8px / 20% 20% 8px 8px; background: #120e08;
+  box-shadow: 0 0 0 1px #3d2f12, 0 10px 24px #000c; transition: box-shadow .25s, transform .25s; }
+.kafel.wykonawca .ok, .kafel.kanal .ok { border-radius: 50%; }
+.kafel:hover .ok { outline: none; transform: translateY(-3px);
+  box-shadow: 0 0 0 1px var(--zloto2), 0 0 0 4px #050404, 0 0 0 5px #6b4d17, 0 0 28px rgba(243,210,122,.3), 0 14px 30px #000; }
+.kafel:hover .t { color: var(--zloto2); }
+.kafel .gw { background: #050404d9; box-shadow: inset 0 0 0 1px #6b4d17; }
+.u { transition: background .15s; }
+.u:hover { background: linear-gradient(90deg, rgba(217,176,90,.13), rgba(217,176,90,.03) 70%, transparent); }
+.u img, .u .brak { box-shadow: 0 0 0 1px #3d2f12; }
+.u .nr { color: #8a7650; font-family: var(--szeryf); }
+.u .plus:hover { color: var(--zloto2); background: rgba(217,176,90,.12); }
+.u .plus[data-dp], #bdp, #pDp { filter: sepia(1) saturate(2.2) hue-rotate(-14deg) brightness(.9); }
+.u .plus.dp[data-dp] { filter: sepia(1) saturate(3) hue-rotate(-14deg) brightness(1.15) drop-shadow(0 0 5px rgba(243,210,122,.6)); }
+.u.gra .t { color: var(--zloto2); text-shadow: 0 0 12px rgba(243,210,122,.35); }
+.naglowek img { border-radius: 50% 50% 10px 10px / 22% 22% 10px 10px;
+  box-shadow: 0 0 0 1px var(--zloto2), 0 0 0 6px #050404, 0 0 0 7px #6b4d17, 0 20px 50px #000, 0 0 60px rgba(243,210,122,.16); }
+.naglowek.wykonawca img, .naglowek.kanal img { border-radius: 50%; }
+.naglowek h1 { font-family: var(--szeryf); font-weight: 700; letter-spacing: .04em; display: inline-block;
+  background: var(--zl); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 14px rgba(243,210,122,.18)); }
+.przycisk { background: linear-gradient(180deg, #fdeab0, #e2bb63 42%, #a87a2a); color: #1a1204; letter-spacing: .03em;
+  box-shadow: inset 0 1px 0 #fff8, 0 0 0 1px #6b4d17, 0 4px 18px rgba(217,176,90,.28); text-shadow: 0 1px 0 #fff5; transition: filter .2s, box-shadow .2s; }
+.przycisk:hover { background: linear-gradient(180deg, #fff1c4, #efca72 42%, #b8862e); box-shadow: inset 0 1px 0 #fff8, 0 0 0 1px #8a6420, 0 4px 26px rgba(243,210,122,.45); }
+.przycisk.drugi { background: rgba(217,176,90,.05); color: var(--zloto2); box-shadow: inset 0 0 0 1px #6b4d17; text-shadow: none; }
+.przycisk.drugi:hover { background: rgba(217,176,90,.14); }
+.najlepszy { background: linear-gradient(135deg, #17120a, #0a0806); border: 1px solid #4a3813;
+  box-shadow: 0 10px 30px #000a, inset 0 1px 0 rgba(243,210,122,.08); transition: border-color .2s, box-shadow .2s; }
+.najlepszy:hover { border-color: var(--zloto); box-shadow: 0 10px 30px #000a, 0 0 26px rgba(243,210,122,.15); }
+.najlepszy img { box-shadow: 0 0 0 1px #6b4d17; }
+.najlepszy .t { font-family: var(--szeryf); color: var(--zloto2); }
+.kreci { border-color: #2a2112; border-top-color: var(--zloto2); box-shadow: 0 0 18px rgba(243,210,122,.2); }
+.baner { background: linear-gradient(135deg, #1b1409, #0b0906); border: 1px solid #6b4d17; box-shadow: 0 0 24px rgba(243,210,122,.08); }
+.info { color: #9c8c68; }
+
+/* kolejka */
+.kolejka { background: linear-gradient(180deg, #0d0a07, #060504); border-left: 1px solid #2e2411; }
+.kolejka h3 { font-family: var(--szeryf); color: var(--zloto); letter-spacing: .22em; font-weight: 700; }
+.kolejka .u.biezacy { background: linear-gradient(90deg, rgba(217,176,90,.22), rgba(217,176,90,.04)); box-shadow: inset 2px 0 0 var(--zloto2); }
+
+/* gracz */
+.gracz { background: linear-gradient(180deg, #100c07, #050404); border-top: 0; }
+.gracz::before { top: 0; }
+.teraz img, .teraz .brak { box-shadow: 0 0 0 1px #6b4d17, 0 4px 14px #000; }
+.akcje button { color: #a8946a; }
+.akcje button:hover { color: var(--zloto2); background: rgba(217,176,90,.12); }
+.guziki button { color: #e6d1a0; }
+.guziki .gg, .guziki .gg:hover { background: radial-gradient(circle at 35% 28%, #fff4cc, #efca72 38%, #b8862e 80%, #8a6420); color: #140e03;
+  box-shadow: inset 0 1px 0 #fff8, 0 0 0 1px #6b4d17, 0 0 22px rgba(243,210,122,.35); }
+.guziki .gg:hover { filter: brightness(1.1); box-shadow: inset 0 1px 0 #fff8, 0 0 0 1px #8a6420, 0 0 32px rgba(243,210,122,.55); }
+.pasek { color: #9c8c68; }
+.pasek .os { background: #2a2112; }
+.pasek .os div { background: linear-gradient(90deg, #8a6420, #f5d67e); box-shadow: 0 0 10px rgba(243,210,122,.5); }
+.prawo .ikonka { color: #a8946a; }
+.prawo .ikonka:hover { background: rgba(217,176,90,.12); }
+.menu, .menuZak { background: linear-gradient(180deg, #17120a, #0b0906); border: 1px solid #4a3813;
+  box-shadow: 0 16px 40px #000d, 0 0 0 1px #000, 0 0 30px rgba(243,210,122,.06); }
+.menu button:hover, .menuZak button:hover { background: rgba(217,176,90,.13); color: var(--zloto2); }
+.menu input, .menuZak input { background: #070605; border-color: #3a2c10; }
+.komunikat, .nowaWersja { background: linear-gradient(135deg, #1b1409, #0b0906); border-color: var(--zloto);
+  box-shadow: 0 10px 30px #000c, 0 0 24px rgba(243,210,122,.18); }
+.nowaWersja .tak { background: linear-gradient(180deg, #fdeab0, #e2bb63 42%, #a87a2a); }
+.gracz .naUrz { background: linear-gradient(180deg, #fdeab0, #d9b05a 60%, #a87a2a); box-shadow: 0 -4px 16px rgba(243,210,122,.25); }
+
+/* telefon */
+@media (max-width: 700px) {
+  .gora .logo { display: flex !important; }
+  .gora .logo span { display: none; }
+  .gora { background: linear-gradient(180deg, #100c07, #070605); }
+  .szukaj input { background: #0d0a06; border: 1px solid #3a2c10; }
+  h2 { font-size: 16px; }
+  .mini { background: linear-gradient(90deg, color-mix(in srgb, var(--mini, #1a140a) 40%, #0a0805), #0a0805 85%);
+    box-shadow: 0 0 0 1px #5a4518, 0 8px 22px #000d, 0 0 20px rgba(243,210,122,.1); }
+  .mini img, .mini .brak { box-shadow: 0 0 0 1px #6b4d17; }
+  .mini .p { color: #cdbd98; }
+  .mini button { color: var(--zloto2); }
+  .mini .os { background: #ffffff14; }
+  .mini .os div { background: linear-gradient(90deg, #8a6420, #f5d67e); box-shadow: 0 0 8px rgba(243,210,122,.6); }
+  .dol { position: relative; background: linear-gradient(180deg, #0e0b07, #050404); }
+  .dol::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--zlLinia); }
+  .dol button { color: #8f805f; }
+  .dol button .i { filter: sepia(1) saturate(1.6) hue-rotate(-14deg) brightness(.75); opacity: .75; }
+  .dol button.tak { color: var(--zloto2); }
+  .dol button.tak .i { filter: sepia(1) saturate(2.6) hue-rotate(-14deg) brightness(1.1) drop-shadow(0 0 6px rgba(243,210,122,.7)); opacity: 1; }
+  .pelny { background: #050404; }
+  .pelny .tlo { filter: blur(50px) saturate(1.2) sepia(.35) brightness(.4); }
+  .pelny .tlo2 { background: radial-gradient(ellipse 90% 40% at 50% 0%, rgba(243,210,122,.16), transparent 70%),
+    linear-gradient(#0000 0%, #0008 50%, #000e 100%); }
+  .pelny .skad { font-family: var(--szeryf); color: var(--zloto); letter-spacing: .28em; font-weight: 700; }
+  .pelny .skad b { font-family: "Inter", "Noto Sans", system-ui, sans-serif; color: var(--tekst); letter-spacing: 0; font-weight: 600; }
+  .pelny .g button { color: var(--zloto2); }
+  .pelny .okl img, .pelny .okl .brak { border-radius: 50% 50% 12px 12px / 20% 20% 12px 12px;
+    box-shadow: 0 0 0 1px var(--zloto2), 0 0 0 7px #0a0805d9, 0 0 0 8px #6b4d17, 0 30px 70px #000, 0 0 80px rgba(243,210,122,.2); }
+  .pelny .info .t { font-family: var(--szeryf); font-weight: 700; letter-spacing: .02em; color: #f7e3ae; text-shadow: 0 0 20px rgba(243,210,122,.25); }
+  .pelny .info { text-align: left; }
+  .pelny .info .p { color: #cdbd98; }
+  .pelny .info button { color: #f0dca8; }
+  .pelny input[type=range] { accent-color: var(--zloto); }
+  .pelny .czasy { color: #b9a67c; }
+  .pelny .ster button { color: #f0dca8; }
+  .pelny .ster .gg { background: radial-gradient(circle at 35% 28%, #fff4cc, #efca72 38%, #b8862e 80%, #8a6420); color: #140e03;
+    box-shadow: inset 0 1px 0 #fff8, 0 0 0 1px #6b4d17, 0 0 34px rgba(243,210,122,.45); }
+  .pelny .d button { color: #cdbd98; }
+  .arkusz .a { background: linear-gradient(180deg, #16110a, #0a0805); box-shadow: 0 -1px 0 #6b4d17, 0 -12px 40px #000; }
+  .arkusz .uchwyt { background: #8a6420; }
+  .arkusz h3 { font-family: var(--szeryf); color: var(--zloto2); letter-spacing: .1em; }
+}
+</style>
+</head>
+<body>
+<div class="aplikacja">
+  <header class="gora">
+    <div class="logo" id="logo"><svg viewBox="34 30 188 196">
+  <defs>
+    <linearGradient id="zlLogo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7dc8c"/><stop offset=".45" stop-color="#d4a94f"/>
+      <stop offset=".7" stop-color="#b8862e"/><stop offset="1" stop-color="#f0c86c"/>
+    </linearGradient>
+    <radialGradient id="tlo" cx=".5" cy=".35" r=".8">
+      <stop offset="0" stop-color="#23262d"/><stop offset="1" stop-color="#0b0c10"/>
+    </radialGradient>
+  </defs>
+  <g stroke="url(#zlLogo)" stroke-width="9" transform="rotate(-90 128 128) translate(0 6)">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M113 190 C70 172 50 122 64 80 C70 62 72 48 60 44 C48 40 42 54 52 60 C56 62 60 60 60 56"/>
+    <path d="M143 190 C186 172 206 122 192 80 C186 62 184 48 196 44 C208 40 214 54 204 60 C200 62 196 60 196 56"/>
+    <path d="M118 182 C84 166 70 124 80 86" stroke-width="5"/>
+    <path d="M138 182 C172 166 186 124 176 86" stroke-width="5"/>
+    <path d="M66 74 H190"/>
+    <path d="M104 74 V172 M116 74 V180 M128 74 V184 M140 74 V180 M152 74 V172" stroke-width="4.5"/>
+    <path d="M113 190 C122 194 134 194 143 190"/>
+    <path d="M116 194 L108 212 H148 L140 194"/>
+  </g>
+  </g>
+</svg><span>Lira</span></div>
+    <button class="wstecz" id="wstecz" hidden title="Wstecz"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg></button>
+    <div class="szukaj"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input id="q" placeholder="Szukaj utworów, wykonawców, albumów… albo wklej link z YouTube" autocomplete="off"></div>
+    <button class="zakladka" id="zPodcasty" title="Podcasty"><span class="i">🎙</span> Podcasty</button>
+    <button class="zakladka" id="zKanaly" title="Kanały YouTube, ulubione i Twoje zakładki"><span class="i">📺</span> Kanały</button>
+    <button class="zakladka" id="zRadio" title="Radio internetowe"><span class="i">📻</span> Radio</button>
+    <button class="zakladka" id="zOdkrywaj" title="Losowa muzyka — przewijaj w górę i w dół"><span class="i">🎲</span> Odkrywaj</button>
+    <button class="zakladka" id="jezyk" title="Język"><span class="i">🌐</span> <span id="jezykNazwa"></span></button>
+    <div class="konto" id="konto"></div>
+    <div class="oknoGuziki">
+      <button id="oMin" title="Minimalizuj"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8.5h10"/></svg></button>
+      <button id="oMax" title="Maksymalizuj"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3.5" y="3.5" width="9" height="9" rx="1.5"/></svg></button>
+      <button id="oZamknij" class="x" title="Zamknij"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4l8 8M12 4l-8 8"/></svg></button>
+    </div>
+  </header>
+  <main class="srodek" id="srodek"><div class="kreci"></div></main>
+  <aside class="kolejka"><h3>Kolejka</h3><div class="utwory" id="kolejka"></div></aside>
+  <footer class="gracz">
+    <div class="teraz" id="teraz"><div class="brak"></div><div><div class="t">Nic nie gra</div><div class="p">Wyszukaj coś albo kliknij kafelek</div></div></div>
+    <div class="sterowanie">
+      <div class="guziki">
+        <button id="bwstecz" title="Poprzedni"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+        <button id="bgraj" class="gg" title="Graj / pauza (spacja)"><svg id="ikgraj" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+        <button id="bdalej" title="Następny"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
+      </div>
+      <div class="pasek"><span id="tpoz">0:00</span><div class="os" id="os"><div id="postep"></div></div><span id="tdl">0:00</span></div>
+    </div>
+    <div class="prawo">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--szary)"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+      <input type="range" id="glosnosc" min="0" max="100" value="70">
+    </div>
+    <div class="menu lewe" id="menuPl" hidden></div>
+  </footer>
+  <div class="mini" id="mini" hidden>
+    <div class="w"><span id="miniOkl"><div class="brak"></div></span>
+      <div class="tx"><div class="t" id="miniT"></div><div class="p" id="miniP"></div></div>
+      <button id="miniGraj"><svg id="miniIk" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+    <div class="os"><div id="miniPost"></div></div>
+  </div>
+  <nav class="dol" id="dol">
+    <button data-nav="start" class="tak"><span class="i">🏠</span>Start</button>
+    <button data-nav="szukaj"><span class="i">🔍</span>Szukaj</button>
+    <button data-nav="podcasty"><span class="i">🎙</span>Podcasty</button>
+    <button data-nav="kanaly"><span class="i">📺</span>Kanały</button>
+    <button data-nav="radio"><span class="i">📻</span>Radio</button>
+    <button data-nav="odkrywaj"><span class="i">🎲</span>Odkrywaj</button>
+  </nav>
+</div>
+<div class="pelny" id="pelny" hidden>
+  <div class="tlo" id="pTlo"></div><div class="tlo2"></div>
+  <div class="w">
+    <div class="g">
+      <button id="pZamknij" title="Zwiń"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg></button>
+      <div class="skad" id="pSkad">Teraz gra<b></b></div>
+      <button id="pKolejka" title="Kolejka"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15 6H3v2h12V6zm0 4H3v2h12v-2zM3 16h8v-2H3v2zM17 6v8.18A3 3 0 0 0 16 14a3 3 0 1 0 3 3V8h3V6h-5z"/></svg></button>
+    </div>
+    <div class="okl" id="pOkl"><div class="brak"></div></div>
+    <div class="info"><div class="tx"><div class="t" id="pT"></div><div class="p" id="pP"></div></div>
+      <button id="pPolub" title="Lubię to"></button></div>
+    <input type="range" id="pOs" min="0" max="1000" value="0">
+    <div class="czasy"><span id="pPoz">0:00</span><span id="pDl">0:00</span></div>
+    <div class="ster">
+      <button class="boczny" id="pDp" title="Na listę do posłuchania">🕒</button>
+      <button id="pWstecz"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+      <button class="gg" id="pGraj"><svg id="pIk" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      <button id="pDalej"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg></button>
+      <button class="boczny" id="pNast" title="Kolejka"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 10H3v2h11v-2zm0-4H3v2h11V6zM3 16h7v-2H3v2zm13-3v-3h-2v3h-3v2h3v3h2v-3h3v-2h-3z"/></svg></button>
+    </div>
+    <div class="glo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 9v6h4l5 5V4l-5 5H7z"/></svg>
+      <input type="range" id="pGl" min="0" max="100" value="70">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg></div>
+    <div class="d">
+      <button id="pKolejka2"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15 6H3v2h12V6zm0 4H3v2h12v-2zM3 16h8v-2H3v2zM17 6v8.18A3 3 0 0 0 16 14a3 3 0 1 0 3 3V8h3V6h-5z"/></svg>Kolejka</button>
+    </div>
+  </div>
+</div>
+<div class="arkusz" id="arkusz" hidden><div class="a" id="arkA"><div class="uchwyt"></div><div id="arkT"></div></div></div>
+<script>
+// ── i18n: UI source strings are Polish (EN maps them to English); strings sent by the server are English (PL maps them back).
+const LANGS = ["en", "pl"];
+const LANG = (() => {
+  let l = new URL(location.href).searchParams.get("lang");
+  try { if (LANGS.includes(l)) localStorage.setItem("lira-lang", l); else l = localStorage.getItem("lira-lang"); } catch {}
+  if (!LANGS.includes(l)) l = (navigator.language || "en").toLowerCase().startsWith("pl") ? "pl" : "en";
+  return l;
+})();
+document.documentElement.lang = LANG;
+const EN = {"Wstecz": "Back", "Szukaj utworów, wykonawców, albumów… albo wklej link z YouTube": "Search songs, artists, albums… or paste a YouTube link", "Podcasty": "Podcasts", "Kanały": "Channels", "Kanały YouTube, ulubione i Twoje zakładki": "YouTube channels, favourites and your bookmarks", "Radio internetowe": "Internet radio", "Radio": "Radio", "Odkrywaj": "Discover", "Losowa muzyka — przewijaj w górę i w dół": "Random music — scroll up and down", "Minimalizuj": "Minimise", "Maksymalizuj": "Maximise", "Zamknij": "Close", "Kolejka": "Queue", "Nic nie gra": "Nothing playing", "Wyszukaj coś albo kliknij kafelek": "Search for something or tap a tile", "Poprzedni": "Previous", "Następny": "Next", "Graj / pauza (spacja)": "Play / pause (space)", "Start": "Home", "Szukaj": "Search", "Zwiń": "Collapse", "Teraz gra": "Now playing", "Lubię to": "Like", "Na listę do posłuchania": "Add to listen-later list", "Nie udało się:": "Failed:", "Wyszukaj kanał u góry — gwiazdka ☆ na kafelku dodaje go do ulubionych, 🔖 w kanale do Twoich zakładek.": "Search for a channel above — the ☆ on a tile adds it to favourites, 🔖 inside a channel adds it to your bookmarks.", "Wyszukaj stację u góry (np. RMF Classic).": "Search for a station above (e.g. Classic FM).", "Wyszukaj podcast u góry.": "Search for a podcast above.", "w ulubionych stacjach ⭐": "added to favourite stations ⭐", "Usunięte z ulubionych stacji": "Removed from favourite stations", "w ulubionych ⭐": "added to favourites ⭐", "Usunięte z ulubionych": "Removed from favourites", "Usuń zakładkę": "Remove bookmark", "usuń zakładkę": "remove bookmark", "słuchaj po kolei": "play in order", "usuń listę": "remove list", "Pusto.": "Empty.", "+ Nowa lista — nazwa i Enter": "+ New list — type a name and press Enter", "Dodane do": "Added to", "Usunięte z": "Removed from", "Zakładki dla": "Bookmarks for", "+ Nowa zakładka — nazwa i Enter": "+ New bookmark — type a name and press Enter", "Dodane do zakładki": "Added to bookmark", "Na Twoją listę (do posłuchania)": "To your listen-later list", "Zagraj jako następny": "Play next", "Ulubione": "Favourites", "Ulubione stacje": "Favourite stations", "Sesja YouTube wygasła.": "YouTube session expired.", "Zaloguj się ponownie, żeby widzieć swoje playlisty.": "Sign in again to see your playlists.", "Twoje playlisty i polubione": "Your playlists and liked songs", "— zaloguj się raz do YouTube Music (strona Google, tu w oknie).": "— sign in to YouTube Music once (Google page, in this window).", "Zaloguj do YouTube Music": "Sign in to YouTube Music", "Zaloguj ponownie": "Sign in again", "Zalogowano": "Signed in", "wyloguj": "sign out", "Pusto — wyszukaj coś u góry.": "Nothing here — search for something above.", "Utwór": "Song", "Album": "Album", "Playlista": "Playlist", "Wykonawca": "Artist", "Podcast": "Podcast", "Kanał": "Channel", "Najlepszy wynik": "Top result", "Utwory": "Songs", "Odcinki podcastów": "Podcast episodes", "Kanały YouTube": "YouTube channels", "Stacje radiowe": "Radio stations", "Nic nie znalazłem dla": "Nothing found for", "Kanał YouTube": "YouTube channel", "utw.": "tracks", "▶ Odtwórz": "▶ Play", "Losowo": "Shuffle", "★ W ulubionych": "★ In favourites", "☆ Do ulubionych": "☆ Add to favourites", "🔖 Zakładki": "🔖 Bookmarks", "Najnowsze filmy": "Latest videos", "Albumy i single": "Albums & singles", "Ładuję:": "Loading:", "Ładuję…": "Loading…", "Usunąć listę": "Remove list", "Usunąć zakładkę": "Remove bookmark", "Zagra jako następny": "Will play next", "Łączę ze stacją:": "Connecting to station:", "Od początku": "From the start", "PRZEWIŃ W GÓRĘ — NASTĘPNY": "SWIPE UP — NEXT", "Nic nie znalazłem — spróbuj za chwilę.": "Nothing found — try again in a moment.", "Dodano do polubionych": "Added to liked songs", "Usunięto z polubionych": "Removed from liked songs", "Usunięte z polubionych": "Removed from liked songs", "Dodane do polubionych ♥": "Added to liked songs ♥", "Usuń z polubionych": "Unlike", "Dodaj do playlisty": "Add to playlist", "Usuń z kolejki": "Remove from queue", "Pusta kolejka": "Queue is empty", "na żywo": "live", "Dodaj": "Add", "do…": "to…", "Wczytuję playlisty…": "Loading playlists…", "+ Nowa playlista — wpisz nazwę i Enter": "+ New playlist — type a name and press Enter", "Utworzona playlista": "Playlist created", "Gra z": "Playing from", "Język": "Language", "Brak sieci": "Network error"};
+const PL = {"Liked songs": "Polubione", "Your liked songs": "Twoje polubione utwory", "Your playlists": "Twoje playlisty", "⭐ Favourite podcasts": "⭐ Ulubione podcasty", "Your podcasts": "Twoje podcasty", "Episodes for later": "Odcinki na później", "🆕 New from favourites": "🆕 Nowe z ulubionych", "Your subscriptions": "Twoje subskrypcje", "⭐ Favourite stations": "⭐ Ulubione stacje", "🕒 Listen later": "🕒 Do posłuchania", "Recommended": "Polecane", "Popular in your country": "Popularne w kraju", "YouTube channel": "Kanał YouTube", "Channel": "Kanał", "Unknown artist for this track.": "Nie znam wykonawcy tego utworu.", "unknown list type": "nieznany typ listy", "This cannot be added to a bookmark.": "Tego nie da się dodać do zakładki.", "No episode given.": "Brak odcinka.", "no such radio": "nie ma takiego radia", "Invalid radio stream address.": "Zły adres strumienia radia.", "Sign in to YouTube Music first (button on the start page).": "Zaloguj się do YouTube Music (przycisk na stronie startowej).", "This track is already on that playlist.": "Ten utwór już jest na tej playliście.", "YouTube did not add the track to the playlist.": "YouTube nie dodał utworu do playlisty.", "YouTube did not create the playlist.": "YouTube nie utworzył playlisty.", "This does not look like a signed-in YouTube session.": "To nie wygląda na zalogowaną sesję YouTube.", "Player is not running (mpv failed to start).": "Odtwarzacz nie działa (mpv nie wystartował).", "mpv closed the connection": "mpv zamknął połączenie", "mpv is not installed (or not in PATH).": "mpv nie jest zainstalowany (albo nie ma go w PATH).", "Playback failed: YouTube returned no audio (yt-dlp).": "Nie udało się odtworzyć — YouTube nie oddał dźwięku (yt-dlp).", "Nothing found.": "Nic nie znalazłem.", "This playlist is empty.": "Ta playlista jest pusta.", "Nothing from YouTube is playing, so there is nothing to like.": "Nic z YouTube teraz nie gra — nie ma czego polubić.", "no such action": "nie ma takiej akcji", "access token required": "wymagany token dostępu", "not found": "nie ma", "Quick picks": "Szybki wybór", "New releases": "Nowości", "All hits": "Same hity", "Take it easy": "Na luzie", "Long listens": "Na dłużej", "Mixed for you": "Miksy", "Energy boosters": "Na energię", "Music videos for you": "Teledyski", "Forgotten favorites": "Zapomniane ulubione", "Listen again": "Posłuchaj ponownie", "Charts": "Listy przebojów", "Moods & moments": "Nastroje", "Today's biggest hits": "Dzisiejsze hity", "Featured playlists for you": "Polecane playlisty", "The sound of autumn": "Brzmienie jesieni", "Trending songs for you": "Na czasie", "Trending": "Na czasie", "Popular with listeners of your favorite artists": "Polecane", "Albums for you": "Albumy dla Ciebie", "Listen together": "Słuchajcie razem", "Fresh finds, old favorites": "Nowe odkrycia i stare ulubione", "Classical Playlists": "Muzyka klasyczna", "From the community": "Od słuchaczy", "Recommended music videos": "Polecane teledyski"};
+function t(s) {
+  if (typeof s !== "string") return s;
+  if (LANG === "en") return EN[s] ?? s;
+  if (PL[s] !== undefined) return PL[s];
+  const m = s.match(/^Station “(.*)” is not responding \(stream did not start\)\.$/);
+  return m ? `Stacja „${m[1]}” nie odpowiada (strumień nie ruszył).` : s;
+}
+function setLang(l) { try { localStorage.setItem("lira-lang", l); } catch {} location.reload(); }
+function trDom(root) {   // static markup is written in Polish; translate text nodes and attributes
+  if (LANG === "pl") return;
+  const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  for (let n; (n = w.nextNode());) { const v = n.nodeValue.trim(); if (v && EN[v]) n.nodeValue = n.nodeValue.replace(v, EN[v]); }
+  root.querySelectorAll("[title],[placeholder]").forEach(e => ["title", "placeholder"].forEach(a => { const v = e.getAttribute(a); if (v && EN[v]) e.setAttribute(a, EN[v]); }));
+}
+</script>
+<script>
+const $ = s => document.querySelector(s);
+trDom(document.body);
+$("#jezykNazwa").textContent = LANG.toUpperCase();
+$("#jezyk").onclick = () => setLang(LANG === "pl" ? "en" : "pl");
+const srodek = $("#srodek");
+let STAN = null, historia = [], widok = null, stanCzas = 0;
+
+const TOKEN = (() => {  // access from other devices: open /?t=TOKEN once, it is remembered afterwards
+  const u = new URL(location.href), t = u.searchParams.get("t");
+  if (t) { try { localStorage.setItem("lira-token", t); } catch {} u.searchParams.delete("t"); history.replaceState(null, "", u); return t; }
+  try { return localStorage.getItem("lira-token") || ""; } catch { return ""; }
+})();
+function api(metoda, sciezka, cialo) {
+  const h = cialo ? { "Content-Type": "application/json" } : {};
+  if (TOKEN) h.Authorization = "Bearer " + TOKEN;
+  return fetch(sciezka, { method: metoda, headers: h,
+    body: cialo ? JSON.stringify(cialo) : undefined })
+    .then(async r => { const j = await r.json().catch(() => ({})); if (!r.ok) throw new Error(t(j.detail) || r.status); return j; });
+}
+function esc(s) { return String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function czas(s) { if (s == null || isNaN(s)) return "–"; s = Math.floor(s); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+let tKom;
+function komunikat(t, blad) {
+  let k = $(".komunikat"); if (!k) { k = document.createElement("div"); k.className = "komunikat"; document.body.append(k); }
+  k.textContent = t; k.classList.toggle("blad", !!blad); k.style.opacity = 1;
+  clearTimeout(tKom); tKom = setTimeout(() => k.style.opacity = 0, blad ? 5000 : 2500);
+}
+const okl = (u, klasa = "") => u ? `<img class="${klasa}" loading="lazy" src="${esc(u)}" alt="">` : `<div class="brak ${klasa}"></div>`;
+
+// ── widoki ─────────────────────────────────────────────
+async function pokaz(w, doHistorii = true) {
+  if (doHistorii && widok) historia.push(widok);
+  widok = w; $("#wstecz").hidden = !historia.length;
+  srodek.innerHTML = '<div class="kreci"></div>'; srodek.scrollTop = 0;
+  try {
+    if (w.typ === "start") rysujStart(await api("GET", "/api/start"));
+    else if (w.typ === "szukaj") rysujWyniki(await api("GET", "/api/szukaj?q=" + encodeURIComponent(w.q)), w.q);
+    else if (w.typ === "odkrywaj") await rysujOdkrywaj();
+    else if (["podcasty", "kanaly", "radio"].includes(w.typ)) rysujSekcje(await api("GET", `/api/lista?typ=${w.typ}&id=-`), w.typ);
+    else rysujListe(await api("GET", `/api/lista?typ=${w.typ}&id=${encodeURIComponent(w.id)}`), w.typ);
+    $("#zPodcasty").classList.toggle("tak", w.typ === "podcasty");
+    $("#zKanaly").classList.toggle("tak", w.typ === "kanaly");
+    $("#zRadio").classList.toggle("tak", w.typ === "radio");
+    $("#zOdkrywaj").classList.toggle("tak", w.typ === "odkrywaj");
+    srodek.classList.toggle("wOdk", w.typ === "odkrywaj");
+    document.querySelectorAll("#dol [data-nav]").forEach(b => b.classList.toggle("tak",
+      b.dataset.nav === w.typ || (b.dataset.nav === "start" && !["podcasty", "kanaly", "radio", "szukaj"].includes(w.typ) && w.typ === "start")));
+  } catch (e) { srodek.innerHTML = `<div class="info">${t("Nie udało się:")} ${esc(e.message)}</div>`; }
+}
+$("#wstecz").onclick = () => { if (historia.length) pokaz(historia.pop(), false); };
+$("#logo").onclick = () => pokaz({ typ: "start" });
+$("#zPodcasty").onclick = () => pokaz({ typ: "podcasty" });
+$("#zKanaly").onclick = () => pokaz({ typ: "kanaly" });
+$("#zRadio").onclick = () => pokaz({ typ: "radio" });
+$("#zOdkrywaj").onclick = () => pokaz({ typ: "odkrywaj" });
+// Ulubione (kanały/podcasty → lokalne zakładki; stacje → plik lokalny)
+const ULUB = new Set(), ULUB_ST = new Set(), DP = new Set();
+let DPL = {};   // nazwa listy → [videoId]
+function wczytajListy(l) { if (!l) return; DPL = l; DP.clear(); Object.values(l).flat().forEach(v => DP.add(v)); }
+api("GET", "/api/do-posluchania").then(wczytajListy).catch(() => {});
+let ZAK = {};
+function wczytajZakladki(z) { if (!z) return; ZAK = z; ULUB.clear(); (z["⭐ Ulubione"] || []).forEach(i => ULUB.add(i)); }
+function rysujSekcje(d, typ) {
+  LISTY.length = 0;
+  if (typ === "kanaly") wczytajZakladki(Object.fromEntries(d.sekcje.filter(s => s.zakladka).map(s => [s.zakladka, s.kafle.map(k => k.id)])));
+  if (d.do_posluchania) wczytajListy(d.do_posluchania);
+  if (typ === "radio") { ULUB_ST.clear(); (d.sekcje.find(s => s.tytul.startsWith("⭐"))?.kafle || []).forEach(k => ULUB_ST.add(k.tytul)); }
+  const puste = { kanaly: t("Wyszukaj kanał u góry — gwiazdka ☆ na kafelku dodaje go do ulubionych, 🔖 w kanale do Twoich zakładek."),
+    radio: t("Wyszukaj stację u góry (np. RMF Classic)."), podcasty: t("Wyszukaj podcast u góry.") };
+  srodek.innerHTML = d.sekcje.map(s => naglowek(s) +
+    (s.utwory ? htmlUtwory(s.utwory) : s.kafle.length ? htmlKafle(s.kafle) : `<div class="info">${esc(puste[typ] || t("Pusto."))}</div>`)).join("")
+    || `<div class="info">${esc(puste[typ] || "Pusto.")}</div>`;
+}
+async function gwiazdka(k) {
+  try {
+    if (k.typ === "stacja") {
+      const tak = !ULUB_ST.has(k.tytul);
+      await api("POST", "/api/radio/ulubione", { stacja: { nazwa: k.tytul, url: k.url, okladka: k.okladka, rid: k.rid }, tak });
+      tak ? ULUB_ST.add(k.tytul) : ULUB_ST.delete(k.tytul);
+      komunikat(tak ? `„${k.tytul}” ${t("w ulubionych stacjach ⭐")}` : t("Usunięte z ulubionych stacji"));
+    } else {
+      const tak = !ULUB.has(k.id);
+      const r = await api("POST", "/api/zakladka", { nazwa: "⭐ Ulubione", kafel: k, tak });
+      wczytajZakladki(r.zakladki);
+      komunikat(tak ? `„${k.tytul}” ${t("w ulubionych ⭐")}` : t("Usunięte z ulubionych"));
+    }
+    if (["kanaly", "radio", "podcasty"].includes(widok.typ)) pokaz(widok, false); else odswiezGwiazdki();
+  } catch (e) { komunikat(e.message, true); }
+}
+function naglowek(s) {
+  return `<h2>${esc(t(s.tytul))}${s.zakladka && s.zakladka !== "⭐ Ulubione"
+      ? ` <button class="xzak" data-xzak="${esc(s.zakladka)}" title="${t("Usuń zakładkę")}">✕ ${t("usuń zakładkę")}</button>` : ""}${s.po_kolei && s.utwory.length
+      ? ` <button class="xzak" data-po-kolei="${LISTY.length}" style="color:var(--zloto2)">▶ ${t("słuchaj po kolei")}</button>` : ""}${s.lista && s.lista !== "🕒 Listen later"
+      ? ` <button class="xzak" data-xlista="${esc(s.lista)}">✕ ${t("usuń listę")}</button>` : ""}</h2>`;
+}
+function odswiezGwiazdki() {
+  document.querySelectorAll("[data-gw]").forEach(b => {
+    const [n, i] = b.dataset.gw.split(":"), k = LISTY[n]?.[+i]; if (!k) return;
+    const tak = k.typ === "stacja" ? ULUB_ST.has(k.tytul) : ULUB.has(k.id);
+    b.classList.toggle("tak", tak); b.textContent = tak ? "★" : "☆";
+  });
+  const g = $("#bulub"); if (g && widok?.id) { const tak = ULUB.has(widok.id); g.textContent = tak ? t("★ W ulubionych") : t("☆ Do ulubionych"); }
+}
+function menuList(btn, u) {
+  document.querySelector(".menuZak")?.remove();
+  const m = document.createElement("div"); m.className = "menuZak";
+  const r = btn.getBoundingClientRect(); m.style.left = Math.min(r.left, innerWidth - 270) + "px"; m.style.top = Math.min(r.bottom + 6, innerHeight - 260) + "px";
+  let zmiana = false;
+  const rysuj = () => {
+    m.innerHTML = `<div class="opis">Dodaj „${esc(u.tytul)}” do listy</div>` +
+      Object.keys(DPL).map(n => `<button data-ln="${esc(n)}">${(DPL[n] || []).includes(u.videoId) ? "✓" : "&nbsp;&nbsp;"} ${esc(n)}</button>`).join("") +
+      `<input placeholder="${t("+ Nowa lista — nazwa i Enter")}">`;
+    m.querySelector("input").addEventListener("keydown", e => { if (e.key === "Enter" && e.target.value.trim()) przelacz(e.target.value.trim(), true); });
+  };
+  const przelacz = async (n, tak) => {
+    try { wczytajListy((await api("POST", "/api/do-posluchania", { lista: n, utwor: u, tak })).listy); zmiana = true; rysuj(); odswiezDp();
+      komunikat(tak ? `${t("Dodane do")} „${n}”` : `${t("Usunięte z")} „${n}”`); } catch (e) { komunikat(e.message, true); }
+  };
+  m.addEventListener("click", e => { e.stopPropagation(); const b = e.target.closest("[data-ln]"); if (b) przelacz(b.dataset.ln, !(DPL[b.dataset.ln] || []).includes(u.videoId)); });
+  m.zamknij = () => { if (zmiana && ["kanaly", "podcasty", "start"].includes(widok.typ)) pokaz(widok, false); };
+  rysuj(); document.body.append(m);
+}
+function odswiezDp() {
+  document.querySelectorAll("[data-dp]").forEach(b => { const [n, i] = b.dataset.dp.split(":"), x = LISTY[n]?.[+i]; if (x) b.classList.toggle("dp", DP.has(x.videoId)); });
+}
+function menuZakladek(btn, kafel) {
+  document.querySelector(".menuZak")?.remove();
+  const m = document.createElement("div"); m.className = "menuZak";
+  const r = btn.getBoundingClientRect(); m.style.left = r.left + "px"; m.style.top = (r.bottom + 6) + "px";
+  const rysuj = () => {
+    m.innerHTML = `<div class="opis">${t("Zakładki dla")} „${esc(kafel.tytul)}”</div>` +
+      Object.keys(ZAK).map(n => `<button data-zn="${esc(n)}">${(ZAK[n] || []).includes(kafel.id) ? "✓" : "&nbsp;&nbsp;"} ${esc(n)}</button>`).join("") +
+      `<input placeholder="${t("+ Nowa zakładka — nazwa i Enter")}">`;
+    m.querySelector("input").addEventListener("keydown", e => { if (e.key === "Enter" && e.target.value.trim()) przelacz(e.target.value.trim(), true); });
+  };
+  const przelacz = async (n, tak) => {
+    try { const r = await api("POST", "/api/zakladka", { nazwa: n, kafel, tak }); wczytajZakladki(r.zakladki); rysuj(); odswiezGwiazdki();
+      komunikat(tak ? `${t("Dodane do zakładki")} „${n}”` : `${t("Usunięte z")} „${n}”`); } catch (e) { komunikat(e.message, true); }
+  };
+  m.addEventListener("click", e => { e.stopPropagation(); const b = e.target.closest("[data-zn]"); if (b) przelacz(b.dataset.zn, !(ZAK[b.dataset.zn] || []).includes(kafel.id)); });
+  rysuj(); document.body.append(m); m.querySelector("input").focus();
+}
+api("GET", "/api/radio/ulubione").then(l => { l.forEach(s => ULUB_ST.add(s.nazwa)); ostatnieTeraz = ""; }).catch(() => {});
+document.addEventListener("click", e => {
+  if (e.target.closest(".menuZak") || e.target.closest("#bzak") || e.target.closest("[data-dp]") || e.target.closest("#bdp")) return;
+  const m = document.querySelector(".menuZak"); if (m) { m.remove(); m.zamknij?.(); }
+});
+api("GET", "/api/lista?typ=kanaly&id=-").then(d => wczytajZakladki(Object.fromEntries(d.sekcje.filter(s => s.zakladka).map(s => [s.zakladka, s.kafle.map(k => k.id)])))).catch(() => {});
+$("#q").addEventListener("keydown", e => {
+  const q = e.target.value.trim(); if (e.key !== "Enter" || !q) return;
+  // Wklejony link: playlista → otwórz, utwór → graj (z radiem)
+  const lista = q.match(/[?&]list=([\w-]+)/), vid = q.match(/(?:[?&]v=|youtu\.be\/)([\w-]{11})/);
+  if (lista && !/^RD/.test(lista[1])) return pokaz({ typ: "playlista", id: lista[1] });
+  if (vid) return graj({ videoId: vid[1] }, "link");
+  pokaz({ typ: "szukaj", q });
+});
+const LOGOWANIE = "https://accounts.google.com/ServiceLogin?service=youtube&continue=" + encodeURIComponent("https://music.youtube.com/");
+function zaloguj() { location.href = LOGOWANIE; }
+let ostatnieKonto = null;
+function rysujKonto(k) {
+  if (k === ostatnieKonto) return; ostatnieKonto = k;
+  $("#konto").innerHTML = k === "tak" ? `${t("Zalogowano")} · <button id="wyloguj">${t("wyloguj")}</button>`
+    : k === "wygaslo" ? `<button id="zaloguj2">${t("Zaloguj ponownie")}</button>` : "";
+  $("#wyloguj")?.addEventListener("click", async () => { await api("POST", "/api/wyloguj", {}); ostatnieKonto = null; odswiez(); pokaz({ typ: "start" }, false); });
+  $("#zaloguj2")?.addEventListener("click", zaloguj);
+  if (widok?.typ === "start" && k !== "tak") pokaz(widok, false);
+}
+
+const LISTY = [];  // listy utworów z bieżącego widoku (do „graj od klikniętego”)
+function htmlUtwory(utwory, numery) {
+  const n = LISTY.push(utwory) - 1;
+  const gra = STAN?.utwor?.videoId;
+  return `<div class="utwory">` + utwory.map((u, i) => `
+    <div class="u od${u.videoId === gra ? " gra" : ""}" data-l="${n}" data-i="${i}">
+      <div class="nr">${numery ? i + 1 : ""}</div>${okl(u.okladka)}
+      <div style="min-width:0"><div class="t">${esc(u.tytul)}</div><div class="p">${esc([u.wykonawca, u.album].filter(Boolean).join(" · "))}</div></div>
+      <div class="czas">${u.dlugosc ? czas(u.dlugosc) : ""}</div>
+      <button class="plus${DP.has(u.videoId) ? " dp" : ""}" title="${t("Na Twoją listę (do posłuchania)")}" data-dp="${n}:${i}">🕒</button>
+      <button class="plus" title="${t("Zagraj jako następny")}" data-nast="${esc(u.videoId)}">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 10H3v2h11v-2zm0-4H3v2h11V6zM3 16h7v-2H3v2zm13-3v-3h-2v3h-3v2h3v3h2v-3h3v-2h-3z"/></svg></button>
+    </div>`).join("") + `</div>`;
+}
+function htmlKafle(kafle) {
+  const n = LISTY.push(kafle) - 1;
+  return `<div class="rzad">` + kafle.map((k, i) => `
+    <div class="kafel ${k.typ}" data-k="${n}" data-i="${i}">${okl(k.okladka, "ok")}
+      ${["kanal", "podcast", "stacja"].includes(k.typ) ? `<button class="gw${(k.typ === "stacja" ? ULUB_ST.has(k.tytul) : ULUB.has(k.id)) ? " tak" : ""}" data-gw="${n}:${i}" title="${t("Ulubione")}">${(k.typ === "stacja" ? ULUB_ST.has(k.tytul) : ULUB.has(k.id)) ? "★" : "☆"}</button>` : ""}
+      <div class="t">${esc(k.tytul)}</div><div class="p">${esc(k.typ === "album" ? t("Album") + " · " + (k.podpis || "") : k.typ === "playlista" ? t("Playlista") + (k.podpis ? " · " + t(k.podpis) : "") : k.typ === "podcast" ? t("Podcast") + (k.podpis ? " · " + k.podpis : "") : k.typ === "stacja" ? t("Radio") + (k.podpis ? " · " + k.podpis : "") : t(k.podpis))}</div></div>`).join("") + `</div>`;
+}
+function rysujStart(sekcje) {
+  LISTY.length = 0;
+  const baner = OKNO && STAN && STAN.konto !== "tak" ? `<div class="baner"><div>${STAN.konto === "wygaslo"
+      ? `<b>${t("Sesja YouTube wygasła.")}</b> ${t("Zaloguj się ponownie, żeby widzieć swoje playlisty.")}`
+      : `<b>${t("Twoje playlisty i polubione")}</b> ${t("— zaloguj się raz do YouTube Music (strona Google, tu w oknie).")}`}</div>
+      <button class="przycisk" onclick="zaloguj()">${t("Zaloguj do YouTube Music")}</button></div>` : "";
+  srodek.innerHTML = baner + sekcje.map(s => {
+    if (s.utwory) return naglowek(s) + htmlUtwory(s.utwory);
+    const ut = s.kafle.filter(k => k.typ === "utwor");
+    return `<h2>${esc(t(s.tytul))}</h2>` + (ut.length === s.kafle.length && ut.length > 6
+      ? `<div style="columns: 2 380px">${htmlUtwory(ut)}</div>` : htmlKafle(s.kafle));
+  }).join("") || `<div class="info">${t("Pusto — wyszukaj coś u góry.")}</div>`;
+}
+function rysujWyniki(w, q) {
+  LISTY.length = 0;
+  let h = "";
+  if (w.najlepszy) {
+    const n = LISTY.push([w.najlepszy]) - 1, k = w.najlepszy;
+    h += `<h2>Najlepszy wynik</h2><div class="najlepszy ${k.typ}" data-k="${n}" data-i="0">${okl(k.okladka)}
+      <div><div class="t">${esc(k.tytul)}</div><div class="p">${esc(t({ utwor: "Utwór", album: "Album", playlista: "Playlista", wykonawca: "Wykonawca", podcast: "Podcast" }[k.typ]))}${k.podpis && k.typ !== "wykonawca" ? " · " + esc(k.podpis) : ""}</div></div></div>`;
+  }
+  if (w.utwory.length) h += `<h2>${t("Utwory")}</h2>` + htmlUtwory(w.utwory);
+  if (w.inne.length) h += `<h2>Albumy, playlisty, wykonawcy</h2>` + htmlKafle(w.inne);
+  if (w.podcasty?.length) h += `<h2>${t("Podcasty")}</h2>` + htmlKafle(w.podcasty);
+  if (w.odcinki?.length) h += `<h2>${t("Odcinki podcastów")}</h2>` + htmlUtwory(w.odcinki);
+  if (w.kanaly?.length) h += `<h2>${t("Kanały YouTube")}</h2>` + htmlKafle(w.kanaly);
+  if (w.stacje?.length) h += `<h2>${t("Stacje radiowe")}</h2>` + htmlKafle(w.stacje);
+  srodek.innerHTML = h || `<div class="info">${t("Nic nie znalazłem dla")} „${esc(q)}”.</div>`;
+}
+function rysujListe(l, typ) {
+  LISTY.length = 0;
+  if ((typ === "podcast" || typ === "kanal") && widok) widok.kafel = { typ, id: widok.id, tytul: l.tytul, okladka: l.okladka,
+    podpis: typ === "kanal" ? t("Kanał") : l.podpis || "" };
+  const n = LISTY.push(l.utwory) - 1;
+  srodek.innerHTML = `<div class="naglowek ${typ}">${okl(l.okladka)}<div>
+      <div class="p">${esc(t({ album: "Album", playlista: "Playlista", wykonawca: "Wykonawca", podcast: "Podcast", kanal: "Kanał YouTube" }[typ]))}</div>
+      <h1>${esc(l.tytul)}</h1><div class="p">${esc(t(l.podpis || ""))}${l.utwory.length ? " · " + l.utwory.length + " " + t("utw.") : ""}</div>
+      ${l.utwory.length && typ !== "podcast" && typ !== "kanal" ? `<button class="przycisk" data-graj-liste="${n}">${t("▶ Odtwórz")}</button><button class="przycisk drugi" data-graj-liste="${n}" data-mieszaj="1">${t("Losowo")}</button>` : ""}
+      ${typ === "podcast" || typ === "kanal" ? `<button class="przycisk" id="bulub">${ULUB.has(widok.id) ? "★ W ulubionych" : "☆ Do ulubionych"}</button><button class="przycisk drugi" id="bzak">${t("🔖 Zakładki")}</button>` : ""}
+    </div></div>` + (typ === "wykonawca" && l.utwory.length ? `<h2>${t("Utwory")}</h2>` : "") + (typ === "kanal" ? `<h2>${t("Najnowsze filmy")}</h2>` : "") +
+    (l.opis ? `<div class="opisPodcastu">${esc(l.opis)}</div>` : "") +
+    htmlUtwory(l.utwory, typ !== "wykonawca" && typ !== "podcast" && typ !== "kanal") + (l.kafle?.length ? `<h2>${t("Albumy i single")}</h2>` + htmlKafle(l.kafle) : "");
+}
+
+// ── kliknięcia ─────────────────────────────────────────
+async function graj(cialo, tytul) {
+  komunikat(t("Ładuję:") + " " + (tytul || "…"));
+  try { STAN = await api("POST", "/api/graj", { ...cialo, czekaj: false }); rysujGracza(); }
+  catch (e) { komunikat(e.message, true); }
+}
+srodek.addEventListener("click", async e => {
+  const dp = e.target.closest("[data-dp]");
+  if (dp) { e.stopPropagation(); const [n, i] = dp.dataset.dp.split(":"); return menuList(dp, LISTY[n][+i]); }
+  const xl = e.target.closest("[data-xlista]");
+  if (xl) { if (!confirm(`${t("Usunąć listę")} „${xl.dataset.xlista}”?`)) return;
+    try { wczytajListy((await api("POST", "/api/do-posluchania", { lista: xl.dataset.xlista, usun_liste: true })).listy); pokaz(widok, false); }
+    catch (err) { komunikat(err.message, true); } return; }
+  const pk = e.target.closest("[data-po-kolei]");
+  if (pk) { const l = LISTY[+pk.dataset.poKolei]; return graj({ utwory: l.map(u => u.videoId), od: 0 }, l[0].tytul); }
+  const gw = e.target.closest("[data-gw]");
+  if (gw) { e.stopPropagation(); const [n, i] = gw.dataset.gw.split(":"); return gwiazdka(LISTY[n][+i]); }
+  if (e.target.closest("#bulub")) return gwiazdka(widok.kafel);
+  const bz = e.target.closest("#bzak");
+  if (bz) { e.stopPropagation(); return menuZakladek(bz, widok.kafel); }
+  const xz = e.target.closest("[data-xzak]");
+  if (xz) { if (!confirm(`${t("Usunąć zakładkę")} „${xz.dataset.xzak}”?`)) return;
+    try { await api("POST", "/api/zakladka", { nazwa: xz.dataset.xzak, usun_zakladke: true }); pokaz(widok, false); } catch (err) { komunikat(err.message, true); } return; }
+  const nast = e.target.closest("[data-nast]");
+  if (nast) { e.stopPropagation(); await steruj("/api/nastepny", { videoId: nast.dataset.nast }); komunikat(t("Zagra jako następny")); return; }
+  const gl = e.target.closest("[data-graj-liste]");
+  if (gl) {
+    let ut = LISTY[gl.dataset.grajListe].map(u => u.videoId);
+    if (gl.dataset.mieszaj) ut = ut.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(x => x[1]);
+    return graj({ utwory: ut, od: 0 }, widok?.tytul);
+  }
+  const u = e.target.closest(".u[data-l]");
+  if (u) {
+    const lista = LISTY[u.dataset.l], i = +u.dataset.i;
+    // W wynikach wyszukiwania / na starcie klik = ten utwór + radio; w albumie/playliście = graj listę od niego.
+    // Odcinek podcastu = sam ten odcinek (bez kolejki i bez muzyki po nim)
+    if (["szukaj", "start", "podcast", "podcasty", "kanal", "kanaly"].includes(widok.typ) || lista[i].odcinek)
+      return graj({ videoId: lista[i].videoId }, lista[i].tytul);
+    return graj({ utwory: lista.map(x => x.videoId), od: i }, lista[i].tytul);
+  }
+  const k = e.target.closest("[data-k]");
+  if (k) {
+    const x = LISTY[k.dataset.k][+k.dataset.i];
+    if (x.typ === "utwor") return graj({ videoId: x.videoId }, x.tytul);
+    if (x.typ === "stacja") {
+      komunikat(t("Łączę ze stacją:") + " " + x.tytul);
+      try { STAN = await api("POST", "/api/radio", x.rid ? { id: x.rid } : { url: x.url, nazwa: x.tytul, okladka: x.okladka }); rysujGracza(); }
+      catch (err) { komunikat(err.message, true); }
+      return;
+    }
+    pokaz({ typ: x.typ, id: x.id, tytul: x.tytul });
+  }
+});
+$("#kolejka").addEventListener("click", e => {
+  const x = e.target.closest("[data-usun]");
+  if (x) { e.stopPropagation(); return steruj("/api/usun", { indeks: +x.dataset.usun }); }
+  const u = e.target.closest(".u"); if (u) steruj("/api/skocz", { indeks: +u.dataset.i });
+});
+
+// ── gracz ──────────────────────────────────────────────
+async function steruj(sciezka, cialo) {
+  try { STAN = await api("POST", sciezka, cialo || {}); stanCzas = performance.now(); rysujGracza(); }
+  catch (e) { komunikat(e.message, true); }
+}
+$("#bgraj").onclick = () => steruj("/api/przelacz");
+$("#bdalej").onclick = () => steruj("/api/dalej");
+$("#bwstecz").onclick = () => {
+  if ((STAN?.utwor?.sekunda || 0) > 5) steruj("/api/przewin", { sekunda: 0 }); else steruj("/api/dalej", { wstecz: true });
+};
+$("#os").onclick = e => {
+  const u = STAN?.utwor; if (!u?.dlugosc) return;
+  const r = e.currentTarget.getBoundingClientRect();
+  steruj("/api/przewin", { sekunda: Math.round((e.clientX - r.left) / r.width * u.dlugosc) });
+};
+let tGl;
+$("#glosnosc").oninput = $("#pGl").oninput = e => { clearTimeout(tGl); tGl = setTimeout(() => steruj("/api/glosnosc", { wartosc: +e.target.value }), 120); };
+// ── Odkrywaj: przewijasz w górę/dół, gra losowy utwór od „ciekawego miejsca” (jak Samples w YT Music) ──
+let ODK = { utwory: [], obs: null, t: null, gra: null, laduje: false };
+const odkStart = u => u.dlugosc > 90 ? Math.round(u.dlugosc * 0.3) : 0;
+function kartaOdk(u, i) {
+  return `<div class="karta" data-i="${i}"><div class="tlo" style="background-image:url('${esc(u.okladka || "")}')"></div>
+    ${u.okladka ? `<img class="ok" src="${esc(u.okladka)}" alt="">` : '<div class="brak"></div>'}
+    <div class="tx"><div class="t">${esc(u.tytul)}</div><div class="p" data-wyk="${i}">${esc(u.wykonawca || "")}</div></div>
+    <div class="guz"><button data-polub="${i}" title="${t("Lubię to")}">♡</button><button data-cala="${i}" title="${t("Od początku")}">⏮</button>
+      <button data-dalej="${i}" title="${t("Następny")}">⌄</button></div>
+    ${i === 0 ? '<div class="podp">PRZEWIŃ W GÓRĘ — NASTĘPNY</div>' : ""}</div>`;
+}
+async function dolozOdk() {
+  if (ODK.laduje) return;
+  ODK.laduje = true;
+  try {
+    const nowe = (await api("GET", "/api/odkrywaj")).utwory || [];
+    const box = $(".odk"); if (!box) return;
+    const od = ODK.utwory.length;
+    ODK.utwory.push(...nowe);
+    box.insertAdjacentHTML("beforeend", nowe.map((u, k) => kartaOdk(u, od + k)).join(""));
+    box.querySelectorAll(".karta:not([data-obs])").forEach(k => { k.dataset.obs = 1; ODK.obs.observe(k); });
+  } catch (err) { komunikat(err.message, true); }
+  finally { ODK.laduje = false; }
+}
+function ocenOdk() {   // ile słuchałeś poprzedniego — serwer uczy się Twojego gustu
+  const p = ODK.utwory[ODK.gra]; if (!p || !ODK.od) return;
+  api("POST", "/api/odkrywaj/ocena", { videoId: p.videoId, sekundy: (performance.now() - ODK.od) / 1000, polubiony: !!p.polubiony }).catch(() => {});
+  ODK.od = 0;
+}
+function grajOdk(i) {
+  const u = ODK.utwory[i]; if (!u || ODK.gra === i) return;
+  ocenOdk();
+  ODK.gra = i; ODK.od = performance.now() + 2500;   // ~2,5 s na start strumienia
+  document.querySelectorAll(".odk .karta").forEach(k => k.classList.toggle("gra", +k.dataset.i === i));
+  // kolejka = ten + następne z karuzeli, więc bez przewijania gra dalej w tej samej kolejności
+  api("POST", "/api/graj", { utwory: ODK.utwory.slice(i).map(x => x.videoId), od: 0, sekunda: odkStart(u), czekaj: false })
+    .then(() => setTimeout(odswiez, 800)).catch(err => komunikat(err.message, true));
+  if (i >= ODK.utwory.length - 4) dolozOdk();
+}
+async function rysujOdkrywaj() {
+  ocenOdk();
+  ODK.obs?.disconnect();
+  ODK = { utwory: [], obs: null, t: null, gra: null, laduje: false };
+  srodek.innerHTML = '<div class="odk"><div class="kreci"></div></div>';
+  const box = $(".odk");
+  ODK.obs = new IntersectionObserver(wpisy => {
+    for (const w of wpisy) if (w.isIntersecting) {
+      clearTimeout(ODK.t);
+      const i = +w.target.dataset.i;
+      ODK.t = setTimeout(() => grajOdk(i), 450);   // szybkie przewijanie nie odpala każdego po drodze
+    }
+  }, { root: box, threshold: 0.65 });
+  box.addEventListener("click", async e => {
+    const b = e.target.closest("[data-polub],[data-cala],[data-dalej],[data-wyk]"); if (!b) return;
+    const i = +(b.dataset.polub ?? b.dataset.cala ?? b.dataset.dalej ?? b.dataset.wyk), u = ODK.utwory[i];
+    if (b.dataset.dalej != null) box.querySelector(`.karta[data-i="${i + 1}"]`)?.scrollIntoView({ behavior: "smooth" });
+    else if (b.dataset.cala != null) { if (ODK.gra === i) steruj("/api/przewin", { sekunda: 0 }); else { ODK.gra = null; grajOdk(i); } }
+    else if (b.dataset.polub != null) {
+      const tak = !b.classList.contains("tak");
+      try { await api("POST", "/api/polub", { videoId: u.videoId, tak }); u.polubiony = tak; b.classList.toggle("tak", tak); b.textContent = tak ? "♥" : "♡"; komunikat(tak ? t("Dodano do polubionych") : t("Usunięto z polubionych")); }
+      catch (err) { komunikat(err.message, true); }
+    } else {
+      try { const w = await api("GET", `/api/wykonawca?vid=${encodeURIComponent(u.videoId)}`); pokaz({ typ: "wykonawca", id: w.id }); }
+      catch (err) { komunikat(err.message, true); }
+    }
+  });
+  box.innerHTML = "";
+  await dolozOdk();
+  if (!ODK.utwory.length) box.innerHTML = '<p style="padding:30px;text-align:center">' + t('Nic nie znalazłem — spróbuj za chwilę.') + '</p>';
+}
+document.addEventListener("keydown", e => {   // komputer: strzałki góra/dół jak przewijanie
+  const box = $(".odk"); if (!box || e.target.tagName === "INPUT" || !["ArrowDown", "ArrowUp"].includes(e.key)) return;
+  e.preventDefault();
+  box.scrollBy({ top: (e.key === "ArrowDown" ? 1 : -1) * box.clientHeight, behavior: "smooth" });
+});
+
+// klik w wykonawcę (pełny odtwarzacz / pasek na dole) → strona wykonawcy z jego utworami
+async function doWykonawcy() {
+  const u = STAN?.utwor;
+  if (!u?.videoId || u.radio || u.odcinek) return;
+  try {
+    const w = await api("GET", `/api/wykonawca?vid=${encodeURIComponent(u.videoId)}`);
+    if (!$("#pelny").hidden) history.back();
+    pokaz({ typ: "wykonawca", id: w.id });
+  } catch (err) { komunikat(err.message, true); }
+}
+$("#pP").onclick = doWykonawcy;
+$("#teraz").addEventListener("click", e => { if (e.target.closest(".p")) doWykonawcy(); });
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT" && e.target.type !== "range") { if (e.key === "Escape") e.target.blur(); return; }
+  if (e.key === " ") { e.preventDefault(); $("#bgraj").click(); }
+  else if (e.key === "/" || (e.ctrlKey && e.key === "f")) { e.preventDefault(); $("#q").focus(); $("#q").select(); }
+  else if (e.key === "ArrowRight" && e.altKey) $("#bdalej").click();
+  else if (e.key === "ArrowLeft" && e.altKey) $("#bwstecz").click();
+});
+
+let ostatniaKolejka = "", ostatniBlad = null, ostatnieTeraz = "";
+function rysujGracza() {
+  const s = STAN; if (!s) return;
+  if (s.blad && s.blad !== ostatniBlad) komunikat(s.blad, true);
+  rysujKonto(s.konto);
+  ostatniBlad = s.blad;
+  const u = s.utwor;
+  if (u) {
+    const naKoncie = s.konto === "tak";
+    const klTeraz = [u.videoId, u.tytul, u.wykonawca, u.laduje, u.polubiony, naKoncie, u.radio && ULUB_ST.has(u.stacja)].join("|");
+    if (klTeraz !== ostatnieTeraz) {
+      ostatnieTeraz = klTeraz;
+      $("#teraz").innerHTML = `${okl(u.okladka)}<div style="min-width:0"><div class="t">${esc(u.tytul)}</div><div class="p">${u.laduje ? t("Ładuję…") : esc(u.wykonawca)}</div></div>` +
+        (u.radio ? `<div class="akcje"><button id="bgwst" class="${ULUB_ST.has(u.stacja) ? "tak" : ""}" title="${t("Ulubione stacje")}" style="font-size:18px">${ULUB_ST.has(u.stacja) ? "★" : "☆"}</button></div>`
+        : naKoncie ? `<div class="akcje"><button id="bpolub" class="${u.polubiony ? "tak" : ""}" title="${u.polubiony ? t("Usuń z polubionych") : t("Lubię to")}">${u.polubiony ? '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>' : '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>'}</button>
+          <button id="bdp" title="${t("Na Twoją listę (do posłuchania)")}" style="font-size:16px">🕒</button>
+          <button id="bdodaj" title="Dodaj do playlisty"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 10H3v2h11v-2zm0-4H3v2h11V6zM3 16h7v-2H3v2zm13-3v-3h-2v3h-3v2h3v3h2v-3h3v-2h-3z"/></svg></button></div>` : "");
+    }
+    document.title = (u.gra ? "▶ " : "") + u.tytul + " — Lira";
+  }
+  $("#ikgraj").innerHTML = u?.gra ? '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>' : '<path d="M8 5v14l11-7z"/>';
+  if (document.activeElement !== $("#glosnosc") && s.glosnosc != null) $("#glosnosc").value = s.glosnosc;
+  if (document.activeElement !== $("#pGl") && s.glosnosc != null) $("#pGl").value = s.glosnosc;
+  const klucz = s.pozycja + "|" + s.kolejka.map(k => k.videoId + (k.tytul || "")).join(",");
+  if (klucz !== ostatniaKolejka) {
+    ostatniaKolejka = klucz;
+    $("#kolejka").innerHTML = s.kolejka.length ? s.kolejka.map((k, i) => `
+      <div class="u${k.biezacy ? " biezacy" : ""}${s.pozycja != null && i < s.pozycja ? " bylo" : ""}" data-i="${i}">${okl(k.okladka)}
+        <div style="min-width:0"><div class="t">${esc(k.tytul)}</div><div class="p">${esc(k.wykonawca || "")}</div></div>
+        <button class="plus" data-usun="${i}" title="${t("Usuń z kolejki")}">✕</button></div>`).join("")
+      : `<div class="info">Pusta kolejka</div>`;
+    $("#kolejka .biezacy")?.scrollIntoView({ block: "center" });
+    document.querySelectorAll(".srodek .u").forEach(el => {
+      const x = LISTY[el.dataset.l]?.[+el.dataset.i]; el.classList.toggle("gra", !!x && x.videoId === u?.videoId);
+    });
+  }
+  rysujUrz(); rysujTelefon();
+  pasek();
+}
+function pasek() {
+  const u = STAN?.utwor;
+  let poz = u ? (u.sekunda_dokl ?? u.sekunda) : 0;
+  if (u?.gra && !u.laduje) poz += (performance.now() - stanCzas) / 1000;
+  const dl = u?.dlugosc || 0; if (dl) poz = Math.min(poz, dl);
+  $("#tpoz").textContent = czas(poz); $("#tdl").textContent = czas(dl || null);
+  $("#postep").style.width = dl ? (poz / dl * 100) + "%" : "0";
+  $("#miniPost").style.width = dl ? (poz / dl * 100) + "%" : "0";
+  if (!pOsTrzymany) { $("#pOs").value = dl ? Math.round(poz / dl * 1000) : 0; $("#pPoz").textContent = czas(poz); }
+  $("#pDl").textContent = dl ? "-" + czas(dl - poz) : (u?.radio ? t("na żywo") : "–");
+}
+let mojaWersja = null;
+async function odswiez() {
+  try {
+    STAN = await api("GET", "/api/stan"); stanCzas = performance.now();
+    // Serwer ma nową stronę (aktualizacja) → przeładuj, żeby nie siedzieć na starej wersji.
+    if (mojaWersja === null) mojaWersja = STAN.wersja;
+    else if (STAN.wersja && STAN.wersja !== mojaWersja) return location.reload();
+    rysujGracza();
+  } catch (e) {}
+}
+setInterval(odswiez, 1000);
+setInterval(pasek, 250);
+
+const OKNO = window.webkit?.messageHandlers?.okno || null;   // okno na Linuksie (muzyka-okno) — bez belki tytułowej
+if (OKNO) {   // górny pasek appki służy za belkę: przeciąganie, 2× klik = maksymalizuj, własne guziki
+  document.documentElement.classList.add("wOknie");
+  $(".gora").addEventListener("mousedown", e => {
+    if (e.button !== 0 || e.target.closest("button, input, a, .konto, .logo")) return;
+    OKNO.postMessage(e.detail === 2 ? "max" : "przesun");
+  });
+  $("#oMin").onclick = () => OKNO.postMessage("min");
+  $("#oMax").onclick = () => OKNO.postMessage("max");
+  $("#oZamknij").onclick = () => OKNO.postMessage("zamknij");
+}
+document.addEventListener("click", e => {
+  if (!e.target.closest("#menuPl") && !e.target.closest("#bdodaj")) $("#menuPl").hidden = true;
+});
+
+// ── polub / dodaj do playlisty ─────────────────────────
+$("#teraz").addEventListener("click", async e => {
+  const u = STAN?.utwor; if (!u) return;
+  const bdp = e.target.closest("#bdp");
+  if (bdp) { e.stopPropagation(); return menuList(bdp, u); }
+  if (e.target.closest("#bgwst")) { await gwiazdka({ typ: "stacja", tytul: u.stacja, url: u.url, okladka: u.okladka, rid: typeof u.radio === "string" ? u.radio : null }); ostatnieTeraz = ""; return rysujGracza(); }
+  if (e.target.closest("#bpolub")) {
+    try { await api("POST", "/api/polub", { videoId: u.videoId, tak: !u.polubiony });
+      komunikat(u.polubiony ? t("Usunięte z polubionych") : t("Dodane do polubionych ♥")); odswiez(); }
+    catch (err) { komunikat(err.message, true); }
+  } else if (e.target.closest("#bdodaj")) {
+    e.stopPropagation();
+    const m = $("#menuPl");
+    if (!m.hidden) { m.hidden = true; return; }
+    m.hidden = false; m.dataset.vid = u.videoId;
+    m.innerHTML = `<div class="opis">${t("Dodaj")} „${esc(u.tytul)}” ${t("do…")}</div><div class="opis">${t("Wczytuję playlisty…")}</div>`;
+    try {
+      const pl = await api("GET", "/api/moje-playlisty");
+      m.innerHTML = `<div class="opis">Dodaj „${esc(u.tytul)}” do…</div>
+        <input id="nowaPl" placeholder="${t("+ Nowa playlista — wpisz nazwę i Enter")}">` +
+        pl.map(p => `<button data-pl="${esc(p.id)}">${esc(p.tytul)}${p.ile ? ` <span style="color:var(--szary)">· ${esc(p.ile)}</span>` : ""}</button>`).join("");
+      $("#nowaPl").addEventListener("keydown", async ev => {
+        if (ev.key !== "Enter" || !ev.target.value.trim()) return;
+        m.hidden = true;
+        try { await api("POST", "/api/nowa-playlista", { tytul: ev.target.value.trim(), videoId: m.dataset.vid });
+          komunikat(`Utworzona playlista „${ev.target.value.trim()}”`); }
+        catch (err) { komunikat(err.message, true); }
+      });
+    } catch (err) { m.innerHTML = `<div class="opis">${esc(err.message)}</div>`; }
+  }
+});
+$("#menuPl").addEventListener("click", async e => {
+  const b = e.target.closest("button[data-pl]"); if (!b) return;
+  const m = $("#menuPl"); m.hidden = true;
+  try { await api("POST", "/api/dodaj-do", { playlistId: b.dataset.pl, videoId: m.dataset.vid });
+    komunikat(`Dodane do „${b.textContent.split(" · ")[0].trim()}”`); }
+  catch (err) { komunikat(err.message, true); }
+});
+
+
+// ── telefon: mini-odtwarzacz, pełny ekran, arkusze ─────
+let pOsTrzymany = false, ostatniaOkl = "";
+const IK_GRAJ = '<path d="M8 5v14l11-7z"/>', IK_PAUZA = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+const SERCE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>';
+const SERCE0 = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z"/></svg>';
+function rysujUrz() {
+  const s = STAN; if (!s) return;
+  if (!$("#arkusz").hidden && $("#arkusz").dataset.co === "kol") rysujArkKolejke();
+}
+function kolorOkladki(url) {   // tło mini-odtwarzacza w kolorze okładki (jak Spotify)
+  const img = new Image(); img.crossOrigin = "anonymous";
+  img.onload = () => { try {
+    const c = document.createElement("canvas"); c.width = c.height = 12; const x = c.getContext("2d"); x.drawImage(img, 0, 0, 12, 12);
+    const d = x.getImageData(0, 0, 12, 12).data; let r = 0, g = 0, b = 0, n = 0;
+    for (let i = 0; i < d.length; i += 4) { const m = Math.max(d[i], d[i + 1], d[i + 2]), mn = Math.min(d[i], d[i + 1], d[i + 2]);
+      const w = 1 + (m - mn) / 40; r += d[i] * w; g += d[i + 1] * w; b += d[i + 2] * w; n += w; }
+    const f = v => Math.round(v / n * .55);
+    document.documentElement.style.setProperty("--mini", `rgb(${f(r)},${f(g)},${f(b)})`);
+  } catch { document.documentElement.style.removeProperty("--mini"); } };
+  img.onerror = () => document.documentElement.style.removeProperty("--mini");
+  img.src = url;
+}
+function rysujTelefon() {
+  const s = STAN, u = s?.utwor;
+  $("#mini").hidden = !u;
+  const ik = u?.gra ? IK_PAUZA : IK_GRAJ;
+  $("#miniIk").innerHTML = ik; $("#pIk").innerHTML = ik;
+  $("#pOkl").classList.toggle("gra", !!u?.gra);
+  if (!u) return;
+  $("#miniT").textContent = u.tytul || "";
+  $("#miniP").textContent = u.laduje ? t("Ładuję…") : u.wykonawca || "";
+  $("#pT").textContent = u.tytul || ""; $("#pP").textContent = u.laduje ? t("Ładuję…") : (u.wykonawca || "");
+  const zrodlo = u.radio ? [t("Radio"), u.stacja] : widok?.tytul && widok.typ !== "start" ? [t("Gra z"), widok.tytul] : [t("Teraz gra"), ""];
+  $("#pSkad").innerHTML = `${esc(zrodlo[0])}<b>${esc(zrodlo[1] || "")}</b>`;
+  const naKoncie = s.konto === "tak";
+  $("#pPolub").hidden = !(u.radio || (naKoncie && u.videoId));
+  $("#pPolub").innerHTML = u.radio ? (ULUB_ST.has(u.stacja) ? "★" : "☆") : (u.polubiony ? SERCE : SERCE0);
+  $("#pPolub").classList.toggle("tak", u.radio ? ULUB_ST.has(u.stacja) : !!u.polubiony);
+  $("#pDp").classList.toggle("tak", DP.has(u.videoId)); $("#pDp").style.visibility = u.videoId ? "" : "hidden";
+  if (u.okladka !== ostatniaOkl) {
+    ostatniaOkl = u.okladka || "";
+    const duza = (u.okladka || "").replace(/=w\d+-h\d+/, "=w800-h800").replace(/\/(mq|hq|sd)default\.jpg/, "/hqdefault.jpg");
+    $("#miniOkl").innerHTML = okl(u.okladka);
+    $("#pOkl").innerHTML = u.okladka ? `<img src="${esc(duza)}" onerror="this.onerror=null;this.src='${esc(u.okladka)}'" alt="">` : `<div class="brak"></div>`;
+    $("#pTlo").style.backgroundImage = u.okladka ? `url("${u.okladka}")` : "none";
+    if (u.okladka) kolorOkladki(u.okladka); else document.documentElement.style.removeProperty("--mini");
+  }
+}
+function otworzPelny() { $("#pelny").hidden = false; history.pushState({ pelny: 1 }, ""); }
+function zamknijPelny() { if (!$("#pelny").hidden) { $("#pelny").hidden = true; } }
+function arkusz(co) {
+  const a = $("#arkusz"); a.dataset.co = co; a.hidden = false;
+  rysujArkKolejke();
+}
+function rysujArkKolejke() {
+  $("#arkT").innerHTML = `<h3>Kolejka</h3><div class="utwory">${$("#kolejka").innerHTML}</div>`;
+  setTimeout(() => $("#arkT .biezacy")?.scrollIntoView({ block: "center" }), 30);
+}
+function zamknijArkusz() { $("#arkusz").hidden = true; }
+$("#arkusz").addEventListener("click", e => {
+  if (e.target === $("#arkusz")) return zamknijArkusz();
+  const x = e.target.closest("[data-usun]");
+  if (x) { e.stopPropagation(); return steruj("/api/usun", { indeks: +x.dataset.usun }).then(rysujArkKolejke); }
+  const u = e.target.closest(".u[data-i]"); if (u) { steruj("/api/skocz", { indeks: +u.dataset.i }); zamknijArkusz(); }
+});
+$("#mini").addEventListener("click", e => {
+  if (e.target.closest("#miniGraj")) return steruj("/api/przelacz");
+  otworzPelny();
+});
+$("#pZamknij").onclick = () => history.back();
+$("#pGraj").onclick = () => steruj("/api/przelacz");
+$("#pDalej").onclick = () => steruj("/api/dalej");
+$("#pWstecz").onclick = () => $("#bwstecz").click();
+$("#pKolejka").onclick = $("#pKolejka2").onclick = $("#pNast").onclick = () => arkusz("kol");
+$("#pDp").onclick = e => { e.stopPropagation(); const u = STAN?.utwor; if (u?.videoId) menuList(e.currentTarget, u); };
+$("#pPolub").onclick = async () => {
+  const u = STAN?.utwor; if (!u) return;
+  if (u.radio) { await gwiazdka({ typ: "stacja", tytul: u.stacja, url: u.url, okladka: u.okladka, rid: typeof u.radio === "string" ? u.radio : null }); return rysujTelefon(); }
+  try { await api("POST", "/api/polub", { videoId: u.videoId, tak: !u.polubiony });
+    komunikat(u.polubiony ? t("Usunięte z polubionych") : t("Dodane do polubionych ♥")); navigator.vibrate?.(15); odswiez(); }
+  catch (err) { komunikat(err.message, true); }
+};
+$("#pOs").addEventListener("input", e => {
+  pOsTrzymany = true; const dl = STAN?.utwor?.dlugosc || 0;
+  $("#pPoz").textContent = czas(e.target.value / 1000 * dl);
+});
+$("#pOs").addEventListener("change", e => {
+  const dl = STAN?.utwor?.dlugosc || 0; pOsTrzymany = false;
+  if (dl) steruj("/api/przewin", { sekunda: Math.round(e.target.value / 1000 * dl) });
+});
+// gesty: okładka w bok = następny/poprzedni, ekran w dół = zwiń
+let dotyk = null;
+$("#pelny").addEventListener("touchstart", e => { if (e.target.closest("input")) return; dotyk = { x: e.touches[0].clientX, y: e.touches[0].clientY, t: Date.now() }; }, { passive: true });
+$("#pelny").addEventListener("touchend", e => {
+  if (!dotyk) return; const dx = e.changedTouches[0].clientX - dotyk.x, dy = e.changedTouches[0].clientY - dotyk.y; const naOkl = !!e.target.closest("#pOkl"); dotyk = null;
+  if (dy > 110 && Math.abs(dx) < 80) return history.back();
+  if (naOkl && Math.abs(dx) > 60 && Math.abs(dy) < 60) {
+    const img = $("#pOkl img, #pOkl .brak"); if (img) { img.style.transform = `translateX(${dx > 0 ? 40 : -40}px)`; img.style.opacity = .3;
+      setTimeout(() => { img.style.transform = ""; img.style.opacity = ""; }, 260); }
+    navigator.vibrate?.(10);
+    return dx < 0 ? steruj("/api/dalej") : steruj("/api/dalej", { wstecz: true });
+  }
+});
+window.addEventListener("popstate", () => { zamknijArkusz(); zamknijPelny(); });
+$("#dol").addEventListener("click", e => {
+  const b = e.target.closest("[data-nav]"); if (!b) return;
+  const n = b.dataset.nav;
+  if (n === "szukaj") { document.querySelectorAll("#dol button").forEach(x => x.classList.toggle("tak", x === b)); $("#q").focus(); $("#q").select(); return; }
+  historia.length = 0; pokaz({ typ: n }, false); $("#wstecz").hidden = true;
+});
+// przycisk „wstecz” Androida (appka woła window.wstecz()): arkusz → pełny ekran → poprzedni widok
+window.wstecz = () => {
+  if (!$("#arkusz").hidden) { zamknijArkusz(); return true; }
+  if (!$("#pelny").hidden) { history.back(); return true; }
+  if (document.querySelector(".menuZak")) { document.querySelector(".menuZak").remove(); return true; }
+  if (historia.length) { pokaz(historia.pop(), false); return true; }
+  return false;
+};
+odswiez().then(() => pokaz({ typ: "start" }, false));
+</script>
+</body>
+</html>

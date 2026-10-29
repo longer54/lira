@@ -68,9 +68,11 @@ fn oddaj_sesje(cm: &CookieManager, wv: &WebView, start_url: String) {
             return; // jeszcze niezalogowany
         }
         let cialo = format!("{{\"cookie\":{},\"user_agent\":{}}}", json_str(&cookie), json_str(&ua));
+        // the server address comes from MUZYKA_URL (start_url), not hard-coded
+        let adres_zaloguj = format!("{}/api/zaloguj", start_url.split('?').next().unwrap_or(&start_url).trim_end_matches('/'));
         let ok = Command::new("curl")
             .args(["-sf", "-m", "20", "-X", "POST", "-H", "Content-Type: application/json",
-                   "--data-binary", "@-", "http://127.0.0.1:26540/api/zaloguj"])
+                   "--data-binary", "@-", &adres_zaloguj])
             .stdin(Stdio::piped())
             .stdout(Stdio::null())
             .spawn()

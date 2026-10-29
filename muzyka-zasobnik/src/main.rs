@@ -12,22 +12,36 @@ use serde_json::{json, Value};
 use std::collections::HashMap;
 use std::io::{Read, Write};
 use std::net::TcpStream;
+use std::net::ToSocketAddrs;
 use std::sync::{Arc, Mutex};
 use std::time::{Duration, Instant};
 use zbus::zvariant::{ObjectPath, OwnedValue, Value as ZValue};
 use zbus::{interface, object_server::SignalEmitter};
 
-const SERWER: &str = "127.0.0.1:26540";
+/// Server address host:port: LIRA_SERVER, else the host:port of MUZYKA_URL, else 127.0.0.1:26540.
+fn serwer() -> &'static str {
+    static S: std::sync::OnceLock<String> = std::sync::OnceLock::new();
+    S.get_or_init(|| {
+        if let Ok(v) = std::env::var("LIRA_SERWER").or_else(|_| std::env::var("LIRA_SERVER")) {
+            if !v.trim().is_empty() { return v.trim().to_string(); }
+        }
+        if let Ok(u) = std::env::var("MUZYKA_URL") {
+            let h = u.split("://").nth(1).unwrap_or(&u).split(['/', '?']).next().unwrap_or("");
+            if !h.is_empty() { return h.to_string(); }
+        }
+        "127.0.0.1:26540".to_string()
+    })
+}
 const SCIEZKA: &str = "/org/mpris/MediaPlayer2";
 
 // ── HTTP do lokalnego lira-serwer (bez zależności — to tylko localhost) ─────────────
 fn http(metoda: &str, sciezka: &str, cialo: Option<Value>) -> Option<Value> {
-    let mut s = TcpStream::connect_timeout(&SERWER.parse().ok()?, Duration::from_secs(2)).ok()?;
+    let mut s = TcpStream::connect_timeout(&serwer().to_socket_addrs().ok()?.next()?, Duration::from_secs(2)).ok()?;
     s.set_read_timeout(Some(Duration::from_secs(20))).ok()?;
     let b = cialo.map(|c| c.to_string()).unwrap_or_default();
     let zap = format!(
-        "{metoda} {sciezka} HTTP/1.0\r\nHost: {SERWER}\r\nUser-Agent: muzyka-zasobnik\r\n\
-         Content-Type: application/json\r\nContent-Length: {}\r\n\r\n{b}", b.len());
+        "{metoda} {sciezka} HTTP/1.0\r\nHost: {}\r\nUser-Agent: muzyka-zasobnik\r\n\
+         Content-Type: application/json\r\nContent-Length: {}\r\n\r\n{b}", serwer(), b.len());
     s.write_all(zap.as_bytes()).ok()?;
     let mut odp = Vec::new();
     s.read_to_end(&mut odp).ok()?;

@@ -4,34 +4,41 @@
 
 ![Lira — zrzut z przykładowymi danymi](docs/screenshot.png)
 
-*Zrzut z przykładowymi danymi — podgląd angielskiego interfejsu, który wejdzie z najbliższą wersją lira-serwer.*
+*Zrzut z przykładowymi danymi — podgląd angielskiego interfejsu.*
 
 Dwie małe aplikacje na pulpit Linuksa (Rust) do odtwarzacza muzyki **Lira**:
 
 - **`muzyka-okno`** — okno (GTK3 + WebKitGTK) z interfejsem odtwarzacza, bez belki tytułowej (górny pasek strony służy za belkę), logowanie do YouTube Music w oknie.
-- **`muzyka-zasobnik`** — ikona w zasobniku (StatusNotifierItem) + sterowanie MPRIS: graj/pauza, następny/poprzedni, „Graj na:” (wybór urządzenia), otwarcie okna.
+- **`muzyka-zasobnik`** — ikona w zasobniku (StatusNotifierItem) + sterowanie MPRIS: graj/pauza, następny/poprzedni, otwarcie okna.
 
-> **Ważne:** to tylko klienci. Oba programy wymagają backendu **`lira-serwer`**
-> (lokalny serwer HTTP na `127.0.0.1:26540`, który wyszukuje i odtwarza muzykę przez
-> `mpv`/`yt-dlp`). Serwer **nie jest częścią tej paczki** — pojawi się w osobnej
-> wersji. Bez niego okno pokaże pustą stronę/błąd połączenia, a zasobnik będzie nieaktywny.
+> **Serwer w paczce:** katalog `lira-serwer/` to backend (lokalny serwer HTTP na
+> `127.0.0.1:26540`, który wyszukuje i odtwarza muzykę przez `mpv`/`yt-dlp`). Wszystko działa na
+> jednym komputerze — zob. [`lira-serwer/README.md`](lira-serwer/README.md). Interfejs po angielsku i po polsku.
 
-## Jak Spotify, tylko u Ciebie w domu
+## Szybki start (lokalnie, jeden komputer)
 
-Masz domowy serwer (mini-PC, Raspberry Pi, NAS z Linuxem)? Stawiasz na nim backend
-`lira-serwer` raz, a potem słuchasz z każdego urządzenia w domu:
+```sh
+sudo apt install mpv python3-venv      # albo odpowiednik w Twojej dystrybucji; yt-dlp doinstaluje pip
+cd lira-serwer
+python3 -m venv venv && . venv/bin/activate
+pip install -r requirements.txt
+python3 lira_serwer.py                 # http://127.0.0.1:26540/ (--host / --port zmieniają adres)
+```
 
-- **okno na Linuxie** (`muzyka-okno`) i **ikona w zasobniku** (`muzyka-zasobnik`) z tej paczki,
-- **Windows** i **Android** — osobne aplikacje-klienci obsługiwane przez backend (komputer z Windows lub telefon może być „głośnikiem”); nie są częścią tej paczki,
-- **„Graj na:”** — przełączasz, na którym urządzeniu gra muzyka, z kolejką i miejscem w utworze (jak Spotify Connect); telefon może grać to samo co serwer, zsynchronizowane,
-- **wspólna kolejka** i stan odtwarzania widoczne na wszystkich urządzeniach,
-- **Twoje playlisty i polubione** z własnego konta YouTube Music (logujesz się w oknie), odtwarzanie przez `mpv` bez reklam,
-- **radio** internetowe (ulubione stacje), **podcasty** i kanały YouTube (lista „Do posłuchania”), zakładka **Odkrywaj** z podpowiedziami.
+Potem otwórz `http://127.0.0.1:26540/` w przeglądarce albo zbuduj i uruchom `muzyka-okno` / `muzyka-zasobnik`.
+Opcjonalnie usługa systemd --user — zob. `lira-serwer/lira-serwer.service`.
+Konfiguracja: `~/.config/lira-serwer/config.json` (`lira-serwer/config.example.json`); dane: `~/.local/share/lira-serwer`.
 
-Okno łączy się z adresem z `MUZYKA_URL`, np. `MUZYKA_URL=http://serwer-domowy:26540/ muzyka-okno`.
-Do dostępu spoza domu używaj VPN/tunelu — nie wystawiaj backendu publicznie.
+## Opcjonalnie: serwer w domu
 
-**Bez serwera w domu też się da** — backend uruchamiasz na tym samym komputerze
+Serwer może też działać na mini-PC / Raspberry Pi / NAS i obsługiwać inne urządzenia w sieci:
+uruchom go z `--host 0.0.0.0` (token dostępu powstaje automatycznie; na każdym urządzeniu otwórz raz
+`http://HOST:26540/?t=TOKEN`), a okno skieruj na niego: `MUZYKA_URL=http://serwer-domowy:26540/ muzyka-okno`.
+Do dostępu spoza domu używaj VPN/tunelu — nie wystawiaj serwera publicznie.
+
+Funkcje: **Twoje playlisty i polubione** z własnego konta YouTube Music (logowanie w oknie), odtwarzanie przez `mpv`; **radio** internetowe (ulubione stacje), **podcasty** i kanały YouTube (lista „Do posłuchania”), zakładka **Odkrywaj**, wyszukiwarka, kolejka, interfejs EN/PL.
+
+**Serwera w domu nie trzeba** — backend działa na tym samym komputerze
 (`127.0.0.1:26540`, ustawienie domyślne okna i zasobnika).
 
 ## Funkcje
@@ -52,12 +59,13 @@ Do dostępu spoza domu używaj VPN/tunelu — nie wystawiaj backendu publicznie.
 Zasobnik uruchamia okno z `~/.local/bin/muzyka-okno`.
 
 ## Konfiguracja
-- `MUZYKA_URL` — adres interfejsu dla okna (domyślnie `http://127.0.0.1:26540/`)
-- adres serwera w zasobniku: stała `SERWER` w `muzyka-zasobnik/src/main.rs`
+- `MUZYKA_URL` — adres interfejsu dla okna (domyślnie `http://127.0.0.1:26540/`); używany też do przekazania logowania (`/api/zaloguj`)
+- `LIRA_SERWER` — `host:port` serwera dla zasobnika (zapasowo host:port z `MUZYKA_URL`, potem `127.0.0.1:26540`)
+- język interfejsu: `?lang=en|pl`, przycisk 🌐 albo język przeglądarki (polski → pl, inaczej en)
 - ciasteczka logowania trzyma backend, nie te programy
 
 ## Stan / plany
-Interfejs jest obecnie po polsku; angielski interfejs i samodzielnie hostowany backend (lira-serwer) pojawią się w następnym wydaniu.
+Backend (`lira-serwer`) i interfejs EN/PL są w repozytorium. Klienci Windows/Android i przełączanie „Graj na:” między urządzeniami nie są częścią tego repozytorium.
 
 ---
 

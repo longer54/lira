@@ -4,34 +4,41 @@
 
 ![Lira — screenshot with sample data](docs/screenshot.png)
 
-*Screenshot with mock data — English UI preview; the English interface ships with the upcoming lira-serwer release.*
+*Screenshot with mock data — English UI preview.*
 
 Two small Linux desktop apps (Rust) for the **Lira** music player:
 
 - **`muzyka-okno`** (the window app) — a window (GTK3 + WebKitGTK) with the player UI and no title bar (the page's top bar doubles as the title bar); YouTube Music sign-in happens inside the window.
-- **`muzyka-zasobnik`** (the tray app) — a tray icon (StatusNotifierItem) + MPRIS controls: play/pause, next/previous, “Play on:” (device picker), open the window.
+- **`muzyka-zasobnik`** (the tray app) — a tray icon (StatusNotifierItem) + MPRIS controls: play/pause, next/previous, open the window.
 
-> **Important:** these are clients only. Both programs require the **`lira-serwer`** backend
-> (a local HTTP server on `127.0.0.1:26540` that searches for and plays music via
-> `mpv`/`yt-dlp`). The server is **not part of this package** — it will ship in a separate
-> release. Without it the window shows a blank page/connection error and the tray icon stays inactive.
+> **Server included:** the `lira-serwer/` directory is the backend (a local HTTP server on
+> `127.0.0.1:26540` that searches for and plays music via `mpv`/`yt-dlp`). Everything runs on one
+> computer — see [`lira-serwer/README.md`](lira-serwer/README.md). The UI is available in English and Polish.
 
-## Like Spotify, on your own home server
+## Quick start (local, one computer)
 
-Got a home server (a mini-PC, Raspberry Pi, a Linux NAS)? Set up the `lira-serwer` backend
-on it once, then listen from any device in your home:
+```sh
+sudo apt install mpv python3-venv      # or your distro's equivalent; yt-dlp comes with pip below
+cd lira-serwer
+python3 -m venv venv && . venv/bin/activate
+pip install -r requirements.txt
+python3 lira_serwer.py                 # http://127.0.0.1:26540/ (--host / --port to change)
+```
 
-- the **Linux window** (`muzyka-okno`) and the **tray icon** (`muzyka-zasobnik`) from this package,
-- **Windows** and **Android** — separate client apps served by the backend (a Windows PC or a phone can act as a “speaker”); not part of this package,
-- **“Play on:”** — switch which device is playing, keeping the queue and the position in the track (like Spotify Connect); a phone can play the same thing as the server, in sync,
-- a **shared queue** and playback state visible on every device,
-- **your playlists and liked songs** from your own YouTube Music account (you sign in inside the window), played through `mpv` without ads,
-- internet **radio** (favourite stations), **podcasts** and YouTube channels (a “Listen later” list), and a **Discover** tab with suggestions.
+Then open `http://127.0.0.1:26540/` in a browser, or build and start `muzyka-okno` / `muzyka-zasobnik`.
+Optional: run it as a systemd user service — see `lira-serwer/lira-serwer.service`.
+Config: `~/.config/lira-serwer/config.json` (`lira-serwer/config.example.json`); data: `~/.local/share/lira-serwer`.
 
-The window connects to the address in `MUZYKA_URL`, e.g. `MUZYKA_URL=http://home-server:26540/ muzyka-okno`.
-For access from outside your home, use a VPN/tunnel — don't expose the backend publicly.
+## Optional: a home server
 
-**No home server? That works too** — run the backend on the same computer
+The server can also run on a mini-PC / Raspberry Pi / NAS and be used from other devices in your network:
+start it with `--host 0.0.0.0` (an access token is created automatically; open `http://HOST:26540/?t=TOKEN` once
+on each device) and point the window at it with `MUZYKA_URL=http://home-server:26540/ muzyka-okno`.
+For access from outside your home use a VPN/tunnel — don't expose the server publicly.
+
+Features: **your playlists and liked songs** from your own YouTube Music account (sign in inside the window), played through `mpv`; internet **radio** (favourite stations), **podcasts** and YouTube channels (a “Listen later” list), a **Discover** tab, search, queue, English/Polish UI.
+
+**No home server needed** — the backend runs on the same computer
 (`127.0.0.1:26540`, the default for both the window and the tray).
 
 ## Features
@@ -52,15 +59,10 @@ For access from outside your home, use a VPN/tunnel — don't expose the backend
 The tray launches the window from `~/.local/bin/muzyka-okno`.
 
 ## Configuration
-- `MUZYKA_URL` — UI address for the window (default `http://127.0.0.1:26540/`)
-- server address used by the tray: the `SERWER` constant in `muzyka-zasobnik/src/main.rs`
+- `MUZYKA_URL` — UI address for the window (default `http://127.0.0.1:26540/`); also used for the sign-in hand-over (`/api/zaloguj`)
+- `LIRA_SERWER` — `host:port` of the server used by the tray (fallback: host:port of `MUZYKA_URL`, then `127.0.0.1:26540`)
+- UI language: `?lang=en|pl`, the 🌐 button, or the browser language (Polish → pl, otherwise en)
 - sign-in cookies are stored by the backend, not by these programs
 
-## Status / Roadmap
-The UI is currently in Polish; English UI and the self-hosted backend (lira-serwer) are coming in the next release.
-
----
-
-**Disclaimer:** Private hobby project, built for learning and personal use. Not affiliated with YouTube or Google. Built with open-source tools (incl. mpv, yt-dlp, WebKitGTK). Every user signs in with their own account and is responsible for complying with the service's terms. Provided “as is”, without warranty of any kind.
-
-License: MIT — see [LICENSE](LICENSE).
+## Status
+The self-hosted backend (`lira-serwer`) and the English/Polish UI are included. Windows/Android clients and multi-device “Play on:” switching are not part of this repository.

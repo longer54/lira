@@ -1,0 +1,10 @@
+{
+  "host": "127.0.0.1",
+  "port": 26540,
+  "language": "auto",
+  "region": "US",
+  "mpv": "",
+  "yt_dlp": "",
+  "proxy_stream": false,
+  "token": ""
+}
