@@ -1,102 +1,66 @@
-# Lira — okno i zasobnik odtwarzacza muzyki
+# Lira — music player window & tray
 
-![Lira — zrzut z przykładowymi danymi](docs/screenshot.png)
+🇵🇱 [Polska wersja](README.pl.md)
 
-*Zrzut z przykładowymi, zmyślonymi danymi (mock API).*
+![Lira — screenshot with sample data](docs/screenshot.png)
 
-Dwie małe aplikacje na pulpit Linuksa (Rust) do odtwarzacza muzyki **Lira**:
+*Screenshot with mock data — English UI preview; the English interface ships with the upcoming lira-serwer release.*
 
-- **`muzyka-okno`** — okno (GTK3 + WebKitGTK) z interfejsem odtwarzacza, bez belki tytułowej (górny pasek strony służy za belkę), logowanie do YouTube Music w oknie.
-- **`muzyka-zasobnik`** — ikona w zasobniku (StatusNotifierItem) + sterowanie MPRIS: graj/pauza, następny/poprzedni, „Graj na:” (wybór urządzenia), otwarcie okna.
+Two small Linux desktop apps (Rust) for the **Lira** music player:
 
-> **Ważne:** to tylko klienci. Oba programy wymagają backendu **`lira-serwer`**
-> (lokalny serwer HTTP na `127.0.0.1:26540`, który wyszukuje i odtwarza muzykę przez
-> `mpv`/`yt-dlp`). Serwer **nie jest częścią tej paczki** — pojawi się w osobnej
-> wersji. Bez niego okno pokaże pustą stronę/błąd połączenia, a zasobnik będzie nieaktywny.
+- **`muzyka-okno`** (the window app) — a window (GTK3 + WebKitGTK) with the player UI and no title bar (the page's top bar doubles as the title bar); YouTube Music sign-in happens inside the window.
+- **`muzyka-zasobnik`** (the tray app) — a tray icon (StatusNotifierItem) + MPRIS controls: play/pause, next/previous, “Play on:” (device picker), open the window.
 
-## Jak Spotify, tylko u Ciebie w domu
+> **Important:** these are clients only. Both programs require the **`lira-serwer`** backend
+> (a local HTTP server on `127.0.0.1:26540` that searches for and plays music via
+> `mpv`/`yt-dlp`). The server is **not part of this package** — it will ship in a separate
+> release. Without it the window shows a blank page/connection error and the tray icon stays inactive.
 
-Masz domowy serwer (mini-PC, Raspberry Pi, NAS z Linuxem)? Stawiasz na nim backend
-`lira-serwer` raz, a potem słuchasz z każdego urządzenia w domu:
+## Like Spotify, on your own home server
 
-- **okno na Linuxie** (`muzyka-okno`) i **ikona w zasobniku** (`muzyka-zasobnik`) z tej paczki,
-- **Windows** i **Android** — osobne aplikacje-klienci obsługiwane przez backend (komputer z Windows lub telefon może być „głośnikiem”); nie są częścią tej paczki,
-- **„Graj na:”** — przełączasz, na którym urządzeniu gra muzyka, z kolejką i miejscem w utworze (jak Spotify Connect); telefon może grać to samo co serwer, zsynchronizowane,
-- **wspólna kolejka** i stan odtwarzania widoczne na wszystkich urządzeniach,
-- **Twoje playlisty i polubione** z własnego konta YouTube Music (logujesz się w oknie), odtwarzanie przez `mpv` bez reklam,
-- **radio** internetowe (ulubione stacje), **podcasty** i kanały YouTube (lista „Do posłuchania”), zakładka **Odkrywaj** z podpowiedziami.
+Got a home server (a mini-PC, Raspberry Pi, a Linux NAS)? Set up the `lira-serwer` backend
+on it once, then listen from any device in your home:
 
-Okno łączy się z adresem z `MUZYKA_URL`, np. `MUZYKA_URL=http://serwer-domowy:26540/ muzyka-okno`.
-Do dostępu spoza domu używaj VPN/tunelu — nie wystawiaj backendu publicznie.
+- the **Linux window** (`muzyka-okno`) and the **tray icon** (`muzyka-zasobnik`) from this package,
+- **Windows** and **Android** — separate client apps served by the backend (a Windows PC or a phone can act as a “speaker”); not part of this package,
+- **“Play on:”** — switch which device is playing, keeping the queue and the position in the track (like Spotify Connect); a phone can play the same thing as the server, in sync,
+- a **shared queue** and playback state visible on every device,
+- **your playlists and liked songs** from your own YouTube Music account (you sign in inside the window), played through `mpv` without ads,
+- internet **radio** (favourite stations), **podcasts** and YouTube channels (a “Listen later” list), and a **Discover** tab with suggestions.
 
-**Bez serwera w domu też się da** — backend uruchamiasz na tym samym komputerze
-(`127.0.0.1:26540`, ustawienie domyślne okna i zasobnika).
+The window connects to the address in `MUZYKA_URL`, e.g. `MUZYKA_URL=http://home-server:26540/ muzyka-okno`.
+For access from outside your home, use a VPN/tunnel — don't expose the backend publicly.
 
-## Funkcje
-- okno: interfejs serwera w WebKitGTK, własne przyciski okna, przekazanie ciasteczek logowania YouTube Music do lokalnego serwera (`/api/zaloguj`)
-- zamknięcie okna nie zatrzymuje muzyki — sterowanie zostaje w zasobniku i klawiszach multimediów
-- zasobnik: menu z bieżącym utworem, sterowanie, wybór urządzenia, MPRIS (klawisze multimediów, aplet dźwięku)
+**No home server? That works too** — run the backend on the same computer
+(`127.0.0.1:26540`, the default for both the window and the tray).
 
-## Wymagania
-- backend `lira-serwer` na `127.0.0.1:26540` (osobny projekt, zob. wyżej)
-- Linux z GTK3 + WebKitGTK 4.1 (`libwebkit2gtk-4.1-dev`, `libgtk-3-dev`, `libsoup-3.0-dev`), D-Bus, Rust (rustup)
-- zasobnik obsługujący StatusNotifierItem
+## Features
+- window (`muzyka-okno`): the server's UI in WebKitGTK, custom window buttons, YouTube Music sign-in cookies handed over to the local server (`/api/zaloguj`)
+- closing the window doesn't stop the music — controls stay available in the tray and on the media keys
+- tray (`muzyka-zasobnik`): menu with the current track, playback controls, device picker, MPRIS (media keys, sound applet)
 
-## Budowanie
+## Requirements
+- the `lira-serwer` backend on `127.0.0.1:26540` (a separate project, see above)
+- Linux with GTK3 + WebKitGTK 4.1 (`libwebkit2gtk-4.1-dev`, `libgtk-3-dev`, `libsoup-3.0-dev`), D-Bus, Rust (rustup)
+- a tray that supports StatusNotifierItem
+
+## Building
 ```sh
 (cd muzyka-okno && cargo build --release && cp target/release/muzyka-okno ~/.local/bin/)
 (cd muzyka-zasobnik && cargo build --release && cp target/release/muzyka-zasobnik ~/.local/bin/)
 ```
-Zasobnik uruchamia okno z `~/.local/bin/muzyka-okno`.
+The tray launches the window from `~/.local/bin/muzyka-okno`.
 
-## Konfiguracja
-- `MUZYKA_URL` — adres interfejsu dla okna (domyślnie `http://127.0.0.1:26540/`)
-- adres serwera w zasobniku: stała `SERWER` w `muzyka-zasobnik/src/main.rs`
-- ciasteczka logowania trzyma backend, nie te programy
+## Configuration
+- `MUZYKA_URL` — UI address for the window (default `http://127.0.0.1:26540/`)
+- server address used by the tray: the `SERWER` constant in `muzyka-zasobnik/src/main.rs`
+- sign-in cookies are stored by the backend, not by these programs
 
----
-
-## English
-
-Two small Linux desktop apps (Rust) for the **Lira** music player:
-
-- **`muzyka-okno`** — a borderless GTK3 + WebKitGTK window with the player UI; YouTube Music sign-in happens inside the window.
-- **`muzyka-zasobnik`** — a tray icon (StatusNotifierItem) + MPRIS controls: play/pause, next/previous, “Play on:” device picker, open window.
-
-> **Important:** these are clients only. Both require the **`lira-serwer`** backend
-> (a local HTTP server on `127.0.0.1:26540` that searches and plays music via
-> `mpv`/`yt-dlp`). The server is **not included** — it will be published separately.
-> Without it the window shows a connection error and the tray stays inactive.
-
-### Like Spotify, on your own home server
-
-Got a home server (mini-PC, Raspberry Pi, a Linux NAS)? Set up the `lira-serwer` backend
-on it once and listen from any device at home:
-
-- the **Linux window** (`muzyka-okno`) and **tray icon** (`muzyka-zasobnik`) from this package,
-- **Windows** and **Android** — separate client apps served by the backend (a Windows PC or a phone can act as a “speaker”); not part of this package,
-- **“Play on:”** — switch which device plays, keeping the queue and position (like Spotify Connect); a phone can play in sync with the server,
-- a **shared queue** and playback state on every device,
-- **your playlists and likes** from your own YouTube Music account (sign in inside the window), played through `mpv` without ads,
-- internet **radio** (favourite stations), **podcasts** and YouTube channels (“Listen later” list), a **Discover** tab with suggestions.
-
-Point the window at the server with `MUZYKA_URL`, e.g. `MUZYKA_URL=http://home-server:26540/ muzyka-okno`.
-Use a VPN/tunnel for access from outside — don't expose the backend publicly.
-
-**No home server? That works too** — run the backend on the same computer
-(`127.0.0.1:26540`, the default for the window and tray).
-
-### Requirements
-- the `lira-serwer` backend on `127.0.0.1:26540` (separate project)
-- Linux with GTK3 + WebKitGTK 4.1, D-Bus, Rust; a StatusNotifierItem tray
-
-### Building / configuration
-See above. `MUZYKA_URL` overrides the window URL; the tray server address is the `SERWER` constant.
+## Status / Roadmap
+The UI is currently in Polish; English UI and the self-hosted backend (lira-serwer) are coming in the next release.
 
 ---
-
-**Zastrzeżenie:** Prywatny projekt hobbystyczny, tworzony do nauki i własnego użytku. Nie jest powiązany z YouTube ani Google. Korzysta z otwartych narzędzi (m.in. mpv, yt-dlp, WebKitGTK). Każdy użytkownik loguje się własnym kontem i sam odpowiada za zgodność z regulaminem serwisu. Oprogramowanie udostępniane „tak jak jest”, bez gwarancji.
 
 **Disclaimer:** Private hobby project, built for learning and personal use. Not affiliated with YouTube or Google. Built with open-source tools (incl. mpv, yt-dlp, WebKitGTK). Every user signs in with their own account and is responsible for complying with the service's terms. Provided “as is”, without warranty of any kind.
 
-Licencja / License: MIT — see [LICENSE](LICENSE).
+License: MIT — see [LICENSE](LICENSE).
