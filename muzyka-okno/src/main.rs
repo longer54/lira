@@ -1,5 +1,5 @@
-//! Okno „Lira” — WebKitGTK z interfejsem lokalnego serwera `muzyka-bps` (backend, osobny projekt).
-//! Samo okno nic nie gra: dźwięk robi mpv w usłudze `muzyka-bps-mpv`. Zamknięcie okna
+//! Okno „Lira” — WebKitGTK z interfejsem lokalnego serwera `lira-serwer` (backend, osobny projekt).
+//! Samo okno nic nie gra: dźwięk robi mpv w usłudze `lira-serwer-mpv`. Zamknięcie okna
 //! NIE pauzuje muzyki („niech gra dalej”) — sterowanie zostaje w
 //! zasobniku i klawiszach multimediów.
 //!
@@ -88,7 +88,7 @@ fn oddaj_sesje(cm: &CookieManager, wv: &WebView, start_url: String) {
 
 fn build_window(app: &gtk::Application) -> gtk::ApplicationWindow {
     // Usługa mogła nie wstać (pierwsze uruchomienie, restart po aktualizacji) — szturchamy.
-    let _ = Command::new("systemctl").args(["--user", "start", "muzyka-bps"]).spawn();
+    let _ = Command::new("systemctl").args(["--user", "start", "lira-serwer"]).spawn();
 
     let mut data_dir = glib::user_data_dir();
     data_dir.push("muzyka-okno");
@@ -176,7 +176,7 @@ fn build_window(app: &gtk::Application) -> gtk::ApplicationWindow {
             _ => {}
         }
     });
-    window.set_icon_name(Some("muzyka-bps"));
+    window.set_icon_name(Some("lira-serwer"));
     window.set_default_size(1280, 820);
     window.add(&webview);
     window

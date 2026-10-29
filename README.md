@@ -9,7 +9,7 @@ Dwie małe aplikacje na pulpit Linuksa (Rust) do odtwarzacza muzyki **Lira**:
 - **`muzyka-okno`** — okno (GTK3 + WebKitGTK) z interfejsem odtwarzacza, bez belki tytułowej (górny pasek strony służy za belkę), logowanie do YouTube Music w oknie.
 - **`muzyka-zasobnik`** — ikona w zasobniku (StatusNotifierItem) + sterowanie MPRIS: graj/pauza, następny/poprzedni, „Graj na:” (wybór urządzenia), otwarcie okna.
 
-> **Ważne:** to tylko klienci. Oba programy wymagają backendu **`muzyka-bps`**
+> **Ważne:** to tylko klienci. Oba programy wymagają backendu **`lira-serwer`**
 > (lokalny serwer HTTP na `127.0.0.1:26540`, który wyszukuje i odtwarza muzykę przez
 > `mpv`/`yt-dlp`). Serwer **nie jest częścią tej paczki** — pojawi się w osobnej
 > wersji. Bez niego okno pokaże pustą stronę/błąd połączenia, a zasobnik będzie nieaktywny.
@@ -17,7 +17,7 @@ Dwie małe aplikacje na pulpit Linuksa (Rust) do odtwarzacza muzyki **Lira**:
 ## Jak Spotify, tylko u Ciebie w domu
 
 Masz domowy serwer (mini-PC, Raspberry Pi, NAS z Linuxem)? Stawiasz na nim backend
-`muzyka-bps` raz, a potem słuchasz z każdego urządzenia w domu:
+`lira-serwer` raz, a potem słuchasz z każdego urządzenia w domu:
 
 - **okno na Linuxie** (`muzyka-okno`) i **ikona w zasobniku** (`muzyka-zasobnik`) z tej paczki,
 - **Windows** i **Android** — osobne aplikacje-klienci obsługiwane przez backend (komputer z Windows lub telefon może być „głośnikiem”); nie są częścią tej paczki,
@@ -38,7 +38,7 @@ Do dostępu spoza domu używaj VPN/tunelu — nie wystawiaj backendu publicznie.
 - zasobnik: menu z bieżącym utworem, sterowanie, wybór urządzenia, MPRIS (klawisze multimediów, aplet dźwięku)
 
 ## Wymagania
-- backend `muzyka-bps` na `127.0.0.1:26540` (osobny projekt, zob. wyżej)
+- backend `lira-serwer` na `127.0.0.1:26540` (osobny projekt, zob. wyżej)
 - Linux z GTK3 + WebKitGTK 4.1 (`libwebkit2gtk-4.1-dev`, `libgtk-3-dev`, `libsoup-3.0-dev`), D-Bus, Rust (rustup)
 - zasobnik obsługujący StatusNotifierItem
 
@@ -63,14 +63,14 @@ Two small Linux desktop apps (Rust) for the **Lira** music player:
 - **`muzyka-okno`** — a borderless GTK3 + WebKitGTK window with the player UI; YouTube Music sign-in happens inside the window.
 - **`muzyka-zasobnik`** — a tray icon (StatusNotifierItem) + MPRIS controls: play/pause, next/previous, “Play on:” device picker, open window.
 
-> **Important:** these are clients only. Both require the **`muzyka-bps`** backend
+> **Important:** these are clients only. Both require the **`lira-serwer`** backend
 > (a local HTTP server on `127.0.0.1:26540` that searches and plays music via
 > `mpv`/`yt-dlp`). The server is **not included** — it will be published separately.
 > Without it the window shows a connection error and the tray stays inactive.
 
 ### Like Spotify, on your own home server
 
-Got a home server (mini-PC, Raspberry Pi, a Linux NAS)? Set up the `muzyka-bps` backend
+Got a home server (mini-PC, Raspberry Pi, a Linux NAS)? Set up the `lira-serwer` backend
 on it once and listen from any device at home:
 
 - the **Linux window** (`muzyka-okno`) and **tray icon** (`muzyka-zasobnik`) from this package,
@@ -87,7 +87,7 @@ Use a VPN/tunnel for access from outside — don't expose the backend publicly.
 (`127.0.0.1:26540`, the default for the window and tray).
 
 ### Requirements
-- the `muzyka-bps` backend on `127.0.0.1:26540` (separate project)
+- the `lira-serwer` backend on `127.0.0.1:26540` (separate project)
 - Linux with GTK3 + WebKitGTK 4.1, D-Bus, Rust; a StatusNotifierItem tray
 
 ### Building / configuration

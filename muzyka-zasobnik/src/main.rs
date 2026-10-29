@@ -1,7 +1,7 @@
-//! Ikonka „Muzyka” w zasobniku + klawisze multimediów (MPRIS) dla muzyka-bps.
+//! Ikonka „Muzyka” w zasobniku + klawisze multimediów (MPRIS) dla lira-serwer.
 //!
 //! Steruje TAM, GDZIE GRA („Graj na:” — serwer, laptop, telefon…): wszystko idzie do lokalnego
-//! serwera muzyka-bps (127.0.0.1:26540), który w razie potrzeby przekazuje polecenia dalej.
+//! serwera lira-serwer (127.0.0.1:26540), który w razie potrzeby przekazuje polecenia dalej.
 //! Dlatego mpv muzyki ma wyłączone mpv-mpris (--load-scripts=no) — jeden odtwarzacz w MPRIS, ten.
 //!
 //! Zasobnik: klik = graj/pauza, środkowy klik = okno, menu = poprzedni/następny, „Graj na”, okno.
@@ -20,7 +20,7 @@ use zbus::{interface, object_server::SignalEmitter};
 const SERWER: &str = "127.0.0.1:26540";
 const SCIEZKA: &str = "/org/mpris/MediaPlayer2";
 
-// ── HTTP do lokalnego muzyka-bps (bez zależności — to tylko localhost) ─────────────
+// ── HTTP do lokalnego lira-serwer (bez zależności — to tylko localhost) ─────────────
 fn http(metoda: &str, sciezka: &str, cialo: Option<Value>) -> Option<Value> {
     let mut s = TcpStream::connect_timeout(&SERWER.parse().ok()?, Duration::from_secs(2)).ok()?;
     s.set_read_timeout(Some(Duration::from_secs(20))).ok()?;
@@ -128,7 +128,7 @@ impl Glowny {
     #[zbus(property)] fn can_raise(&self) -> bool { true }
     #[zbus(property)] fn has_track_list(&self) -> bool { false }
     #[zbus(property)] fn identity(&self) -> String { "Lira".into() }
-    #[zbus(property)] fn desktop_entry(&self) -> String { "muzyka-bps".into() }
+    #[zbus(property)] fn desktop_entry(&self) -> String { "lira-serwer".into() }
     #[zbus(property)] fn supported_uri_schemes(&self) -> Vec<String> { vec![] }
     #[zbus(property)] fn supported_mime_types(&self) -> Vec<String> { vec![] }
 }
@@ -217,14 +217,14 @@ async fn powiadom(p: &zbus::Connection, s: &Stan, poprzednie: u32) -> u32 {
         tokio::task::spawn_blocking(move || pobierz_okladke(&url)).await.ok().flatten()
     };
     let mut wskazowki: HashMap<&str, ZValue> = HashMap::new();
-    wskazowki.insert("desktop-entry", ZValue::from("muzyka-bps"));
+    wskazowki.insert("desktop-entry", ZValue::from("lira-serwer"));
     wskazowki.insert("category", ZValue::from("x-gnome.music"));
     if let Some(o) = &okl { wskazowki.insert("image-path", ZValue::from(o.as_str())); }
     let tresc = if s.cel != s.tu && !s.cel.is_empty() {
         format!("{}\ngra na: {}", u.wykonawca, nazwa(&s.cel))
     } else { u.wykonawca.clone() };
     let odp = p.call_method(Some(POWIADOMIENIA), "/org/freedesktop/Notifications", Some(POWIADOMIENIA), "Notify",
-        &("Lira", poprzednie, "muzyka-bps", u.tytul.as_str(), tresc.as_str(),
+        &("Lira", poprzednie, "lira-serwer", u.tytul.as_str(), tresc.as_str(),
           vec!["default", "Otwórz", "dalej", "⏭ Następny"], wskazowki, 5000i32)).await;
     odp.ok().and_then(|m| m.body().deserialize::<u32>().ok()).unwrap_or(poprzednie)
 }
@@ -248,15 +248,15 @@ async fn sluchaj_powiadomien(p: zbus::Connection, moje: Arc<Mutex<u32>>) {
 struct Zasobnik(Stan);
 
 impl Tray for Zasobnik {
-    fn id(&self) -> String { "muzyka-bps".into() }
+    fn id(&self) -> String { "lira-serwer".into() }
     fn icon_name(&self) -> String {
-        "muzyka-bps-zasobnik".into()   // złota lira (muzyka-bps --instaluj kładzie ją do hicolor)
+        "lira-serwer-zasobnik".into()   // złota lira (lira-serwer --instaluj kładzie ją do hicolor)
     }
     fn title(&self) -> String { "Lira".into() }
     fn tool_tip(&self) -> ToolTip {
         let s = &self.0;
         let (title, description) = match &s.utwor {
-            _ if !s.jest => ("Lira".into(), "serwer muzyka-bps nie odpowiada".into()),
+            _ if !s.jest => ("Lira".into(), "serwer lira-serwer nie odpowiada".into()),
             None => ("Lira".into(), "Nic nie gra — klik: otwórz".into()),
             Some(u) => (format!("{} {}", if s.gra { "▶" } else { "⏸" }, u.tytul),
                         format!("{}\ngra na: {}", u.wykonawca, nazwa(&s.cel))),
@@ -309,7 +309,7 @@ impl Tray for Zasobnik {
             }.into());
         }
         m.push(MenuItem::Separator);
-        m.push(StandardItem { label: "Otwórz Muzykę".into(), icon_name: "muzyka-bps".into(),
+        m.push(StandardItem { label: "Otwórz Muzykę".into(), icon_name: "lira-serwer".into(),
             activate: Box::new(|_| otworz_okno()), ..Default::default() }.into());
         m
     }
@@ -320,7 +320,7 @@ async fn main() -> zbus::Result<()> {
     let wspolny: Wspolny = Arc::new(Mutex::new(Stan::default()));
 
     let polaczenie = zbus::connection::Builder::session()?
-        .name("org.mpris.MediaPlayer2.muzyka_bps")?
+        .name("org.mpris.MediaPlayer2.lira_serwer")?
         .serve_at(SCIEZKA, Glowny)?
         .serve_at(SCIEZKA, Gracz(wspolny.clone()))?
         .build().await?;
