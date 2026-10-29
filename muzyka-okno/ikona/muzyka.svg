@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="zl" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff1b8"/><stop offset=".3" stop-color="#e9c46a"/>
+      <stop offset=".55" stop-color="#a87a2a"/><stop offset=".8" stop-color="#e4bd62"/>
+      <stop offset="1" stop-color="#fbe6a2"/>
+    </linearGradient>
+    <radialGradient id="tlo" cx=".5" cy=".3" r=".85">
+      <stop offset="0" stop-color="#1f1709"/><stop offset=".6" stop-color="#0a0805"/><stop offset="1" stop-color="#020202"/>
+    </radialGradient>
+    <radialGradient id="blask" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#f3d27a" stop-opacity=".22"/><stop offset="1" stop-color="#f3d27a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="56" fill="url(#tlo)"/>
+  <circle cx="128" cy="126" r="104" fill="url(#blask)"/>
+  <rect x="9" y="9" width="238" height="238" rx="48" fill="none" stroke="url(#zl)" stroke-width="3"/>
+  <rect x="16" y="16" width="224" height="224" rx="42" fill="none" stroke="url(#zl)" stroke-width="1.2" opacity=".55"/>
+  <g stroke="url(#zl)" stroke-width="7" transform="rotate(-90 128 128) translate(0 6)">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M113 190 C70 172 50 122 64 80 C70 62 72 48 60 44 C48 40 42 54 52 60 C56 62 60 60 60 56"/>
+    <path d="M143 190 C186 172 206 122 192 80 C186 62 184 48 196 44 C208 40 214 54 204 60 C200 62 196 60 196 56"/>
+    <path d="M118 182 C84 166 70 124 80 86" stroke-width="5"/>
+    <path d="M138 182 C172 166 186 124 176 86" stroke-width="5"/>
+    <path d="M66 74 H190"/>
+    <path d="M104 74 V172 M116 74 V180 M128 74 V184 M140 74 V180 M152 74 V172" stroke-width="4.5"/>
+    <path d="M113 190 C122 194 134 194 143 190"/>
+    <path d="M116 194 L108 212 H148 L140 194"/>
+  </g>
+  </g>
+</svg>

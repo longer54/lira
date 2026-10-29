@@ -1,0 +1,17 @@
+[package]
+name = "muzyka-okno"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "muzyka-okno"
+path = "src/main.rs"
+
+[dependencies]
+gtk = "0.18"
+webkit2gtk = { version = "2.0", features = ["v2_40"] }
+soup = { package = "soup3", version = "0.5" }
+javascriptcore = { package = "javascriptcore-rs", version = "1.1" }
+
+[profile.release]
+opt-level = 2
